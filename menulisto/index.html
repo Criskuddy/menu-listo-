@@ -196,6 +196,15 @@
       .step h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; }
       .step p { font-size: 0.93rem; color: var(--ink-soft); }
 
+      /* Cómo trabajamos */
+      .work-box { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 22px 26px; }
+      .work-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 28px; }
+      .work-list li { display: flex; gap: 9px; align-items: flex-start; font-size: 0.97rem; }
+      .work-list li svg { width: 18px; height: 18px; flex: 0 0 auto; margin-top: 3px; color: var(--teal); }
+      .referral { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); font-size: 0.97rem; }
+      .referral strong { color: var(--teal); }
+      @media (max-width: 700px) { .work-list { grid-template-columns: 1fr; } .work-box { padding: 18px; } }
+
       /* Audience chips */
       .chips { display: flex; flex-wrap: wrap; gap: 10px; }
       .chip {
@@ -385,6 +394,8 @@
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Enlace propio + código QR listo para imprimir</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Tus productos o servicios con precios</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Horario de tu negocio</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Sin cambios incluidos (cada cambio $100)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Rediseño $250</li>
             </ul>
             <a class="btn btn-ghost" href="https://wa.me/528113009691?text=Hola%20Men%C3%BAListo%2C%20me%20interesa%20el%20paquete%20Inicial%20de%20%24500." target="_blank" rel="noopener">Pedir el Inicial</a>
           </article>
@@ -396,7 +407,8 @@
             <ul>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Todo lo del Inicial</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Tu marca: colores, logo e imagen de fondo</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Cambios de precios y servicios incluidos</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>5 cambios al mes incluidos</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Rediseño $250</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Enlaces a tu WhatsApp y redes sociales</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Reseñas de Google Maps (si no tienes perfil, te ayudamos a crearlo)</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>1 tarjeta de presentación digital incluida</li>
@@ -409,10 +421,12 @@
             <p class="plan-monthly">+ $500 MXN al mes</p>
             <ul>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Todo lo del Estándar</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Cambios ilimitados (1 pedido por día)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Rediseño: 1 gratis al mes</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Fotos de tus productos o servicios</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Pedidos o citas por WhatsApp</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Promociones en tu menú</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Conteo de escaneos de tu QR</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Reporte mensual de visitas y escaneos</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Reseñas de Google Maps (si no tienes perfil, te ayudamos a crearlo)</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>3 tarjetas de presentación digitales incluidas</li>
             </ul>
@@ -448,6 +462,23 @@
             <h3>Lo compartes</h3>
             <p>Lo pegas en tu negocio y lo mandas a tus clientes. Si un precio cambia, nos avisas y se actualiza.</p>
           </div>
+        </div>
+      </section>
+
+      <!-- ================= CÓMO TRABAJAMOS ================= -->
+      <section id="como-trabajamos" aria-labelledby="trabajamos-h">
+        <div class="sec-head">
+          <h2 id="trabajamos-h">Cómo trabajamos</h2>
+        </div>
+        <div class="work-box">
+          <ul class="work-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Menú básico lo antes posible; el trabajo detallado, en 3 a 5 días hábiles tras recibir toda tu información.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Cambios por WhatsApp, en un solo mensaje; se aplican en 1 a 2 días hábiles.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Nuestros errores se corrigen gratis.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>$100 por cambio extra.</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Pago por transferencia bancaria. La mensualidad se cobra el mismo día del mes en que se entregó el menú.</li>
+          </ul>
+          <p class="referral"><strong>Referidos:</strong> Recomienda MenúListo y los dos se llevan un mes gratis: tú y el negocio nuevo (si el nuevo contrata Inicial, se lleva una tarjeta digital extra gratis).</p>
         </div>
       </section>
 
