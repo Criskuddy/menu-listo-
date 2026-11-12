@@ -1596,6 +1596,20 @@
   /* ================= Init ================= */
   renderSamples();
   applyAll();
+
+  /* Conteo discreto de visitas de MenúListo: solo aplica a menús Premium y a menús de prueba de 15 días;
+     para un menú Inicial se pone ML_COUNTING_ENABLED = false.
+     El total se consulta sin incrementar con GET https://abacus.jasoncameron.dev/get/menulisto/<clave>
+     y el reporte mensual es el valor del último día del mes menos el valor del día 1. */
+  (function(){
+    const ML_COUNTING_ENABLED = true;
+    const ML_COUNT_NAMESPACE = 'menulisto';
+    if (!ML_COUNTING_ENABLED || window.__mlCountingDone) return;
+    window.__mlCountingDone = true;
+    var clave = (location.pathname || '').replace(/\//g, '');
+    clave = clave ? 'menu-' + clave : 'menu-inicio';
+    fetch('https://abacus.jasoncameron.dev/hit/' + ML_COUNT_NAMESPACE + '/' + clave + '?t=' + Date.now(), {mode: 'cors', keepalive: true}).catch(function(){});
+  })();
 })();
 </script>
 </body>
