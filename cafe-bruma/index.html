@@ -311,6 +311,111 @@
   .demo-brands span{font-weight:700; font-size:.92rem; margin-right:.2rem}
   .studio-note{margin:14px 0 0; color:var(--muted); font-size:.88rem}
 
+  /* ---------- Studio tabs ---------- */
+  .studio-tabs{
+    display:flex; flex-wrap:wrap; gap:.5rem;
+    margin:0 0 20px; padding-bottom:18px; border-bottom:1px dashed var(--line);
+  }
+  .studio-tab{
+    display:inline-flex; align-items:center; gap:.45rem;
+    background:var(--surface); border:1px solid var(--line); border-radius:999px;
+    padding:.55rem 1.05rem; cursor:pointer; font:inherit; font-weight:700; font-size:.93rem; color:var(--ink-soft);
+    min-height:44px;
+  }
+  .studio-tab b{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:22px; height:22px; border-radius:50%; flex:none;
+    background:var(--surface-2); color:var(--ink-soft); font-size:.78rem;
+  }
+  .studio-tab[aria-selected="true"]{background:var(--accent); border-color:var(--accent); color:var(--accent-ink)}
+  .studio-tab[aria-selected="true"] b{background:rgba(255,255,255,.25); color:inherit}
+  .studio-panel{padding-top:2px}
+  .studio-panel[hidden]{display:none}
+  .studio-panel .studio-block{margin-top:0; padding-top:0; border-top:0}
+  .panel-lead{margin:0 0 16px; color:var(--ink-soft); max-width:44rem}
+  .panel-next{margin-top:18px; display:flex; gap:.55rem; flex-wrap:wrap; align-items:center}
+  .panel-next span{color:var(--muted); font-size:.9rem}
+
+  /* Create-a-new-example box */
+  .create-box{
+    border:1px solid var(--line); border-radius:12px; background:var(--surface-2);
+    padding:16px; margin-bottom:18px;
+  }
+  .create-box h3{margin-bottom:.35rem}
+  .create-box > p{margin:0 0 14px; color:var(--ink-soft); font-size:.93rem; max-width:40rem}
+  .base-btns{display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:14px}
+  .base-btn{
+    display:inline-flex; align-items:center; gap:.45rem;
+    background:var(--surface); border:1px solid var(--line); border-radius:999px;
+    padding:.5rem .95rem; cursor:pointer; font:inherit; font-weight:700; font-size:.9rem; color:var(--ink);
+    min-height:44px;
+  }
+  .base-btn i{width:13px; height:13px; border-radius:50%; flex:none}
+  .base-btn[aria-pressed="true"]{border-color:var(--accent); outline:2px solid var(--accent); outline-offset:1px; background:var(--accent-soft)}
+  .create-row{display:flex; gap:.6rem; flex-wrap:wrap; align-items:end}
+  .create-row .field{flex:1 1 220px; margin-bottom:0}
+  .create-status{margin:12px 0 0; font-weight:600; color:var(--green); font-size:.93rem}
+  .create-status:empty{display:none}
+  .example-actions{display:flex; gap:.55rem; flex-wrap:wrap; align-items:center}
+  .example-actions span{font-weight:700; font-size:.92rem; margin-right:.2rem}
+
+  /* Result bar */
+  .result-bar{
+    margin-top:22px; padding:18px; border-radius:var(--radius);
+    background:var(--brown); color:var(--brown-ink);
+    display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+  }
+  .result-bar h3{font-size:1.15rem; margin:0 0 .2rem; color:var(--brown-ink)}
+  .result-bar p{margin:0; color:#e2d0b6; font-size:.93rem; max-width:34rem}
+  .result-bar .btn{flex:none; background:var(--accent); border-color:var(--accent); color:var(--accent-ink)}
+
+  /* ---------- Digital business cards ---------- */
+  .field select{
+    width:100%; border:1px solid var(--line); border-radius:10px; background:var(--surface);
+    color:var(--ink); font:inherit; padding:.55rem .8rem; min-height:44px;
+  }
+  .card-tabs{display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:18px}
+  .card-tab{
+    display:inline-flex; align-items:center; gap:.45rem;
+    background:var(--surface); border:1px solid var(--line); border-radius:999px;
+    padding:.5rem 1rem; cursor:pointer; font:inherit; font-weight:700; font-size:.92rem; color:var(--ink);
+    min-height:44px;
+  }
+  .card-tab small{font-weight:600; color:var(--muted)}
+  .card-tab[aria-selected="true"]{border-color:var(--accent); outline:2px solid var(--accent); outline-offset:1px; background:var(--accent-soft)}
+  .card-layout{display:grid; grid-template-columns:1fr 1fr; gap:26px; align-items:start}
+  .card-actions{display:flex; gap:.55rem; flex-wrap:wrap; margin-top:4px}
+  .bc{
+    border-radius:18px; overflow:hidden; box-shadow:var(--shadow);
+    border:1px solid var(--line); background:var(--surface);
+  }
+  .bc-head{
+    background:var(--brown); color:var(--brown-ink);
+    padding:20px 22px; display:flex; gap:14px; align-items:center;
+  }
+  .bc-badge{
+    flex:none; width:58px; height:58px; border-radius:14px;
+    background:var(--accent); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-family:"Bitter", Georgia, serif; font-weight:800; font-size:1.3rem;
+    border:2px solid rgba(247,236,221,.45); overflow:hidden;
+  }
+  .bc-badge img{width:100%; height:100%; object-fit:cover}
+  .bc-badge svg{width:30px; height:30px}
+  .bc-head h3{font-size:1.35rem; color:var(--brown-ink); margin:0}
+  .bc-role{
+    display:inline-block; margin-top:.3rem; font-size:.72rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase;
+    background:rgba(240,201,143,.18); color:#f0c98f; padding:.18rem .55rem; border-radius:999px;
+  }
+  .bc-biz{padding:14px 22px 4px; font-weight:700; font-size:1.02rem}
+  .bc-contacts{padding:6px 22px 18px; display:grid; gap:.45rem}
+  .bc-contacts span{display:flex; align-items:center; gap:.55rem; color:var(--ink-soft); font-size:.94rem; overflow-wrap:anywhere}
+  .bc-contacts svg{flex:none; color:var(--accent)}
+  .bc-foot{padding:0 22px 20px}
+  .bc-foot .btn{width:100%}
+  .bc-note{margin:.8rem 0 0; color:var(--muted); font-size:.88rem}
+  @media (max-width:640px){ .card-layout{grid-template-columns:1fr} }
+
   /* Background image samples */
   .samples{display:grid; grid-template-columns:repeat(4, 1fr); gap:.6rem}
   .sample-btn{
@@ -412,19 +517,57 @@
 
 <section class="studio wrap" id="personalizar" aria-labelledby="studio-title">
   <div class="studio-card">
-    <h2 id="studio-title">Ponle tu marca a este menú</h2>
-    <p>El mismo menú, con tu negocio: elige un caso de ejemplo y cambia los colores, el nombre, el logo, la imagen de fondo, los horarios y los ítems. Todo cambia al momento, tal como lo vería tu cliente al escanear el QR, y cada caso guarda sus propios cambios mientras dure tu visita.</p>
+    <h2 id="studio-title">Crea un nuevo ejemplo de menú</h2>
+    <p>Este es el muestrario base: los ítems de las muestras se quedan tal cual. Para armar otro menú, crea un ejemplo nuevo desde una plantilla y pásate por las pestañas — colores, marca, fondo, horarios e ítems — y en la pestaña Tarjetas armas la tarjeta de presentación digital del dueño, un socio o un vendedor; al final, abajo queda el menú distinto ya armado, tal como lo vería tu cliente al escanear el QR. Cada ejemplo guarda sus propios cambios mientras dure tu visita.</p>
 
-    <div class="case-switch" role="group" aria-label="Casos de ejemplo">
-      <span>Caso de ejemplo:</span>
-      <button type="button" class="case-btn" data-case="bruma" aria-pressed="true"><i style="background:#a34d1f"></i>Café Bruma</button>
-      <button type="button" class="case-btn" data-case="faro" aria-pressed="false"><i style="background:#b3271e"></i>Taquería El Faro</button>
-      <button type="button" class="case-btn" data-case="luna" aria-pressed="false"><i style="background:#b04a72"></i>Estética Luna</button>
+    <div class="case-switch" role="group" aria-label="Ejemplos de menú">
+      <span>Ejemplo en edición:</span>
+      <span id="case-list" style="display:contents"></span>
     </div>
 
-    <div class="studio-grid">
+    <div class="studio-tabs" role="tablist" aria-label="Pasos para crear tu ejemplo">
+      <button type="button" class="studio-tab" role="tab" id="tab-ejemplo" data-tab="ejemplo" aria-selected="true" aria-controls="panel-ejemplo"><b>1</b>Ejemplo</button>
+      <button type="button" class="studio-tab" role="tab" id="tab-colores" data-tab="colores" aria-selected="false" aria-controls="panel-colores" tabindex="-1"><b>2</b>Colores</button>
+      <button type="button" class="studio-tab" role="tab" id="tab-marca" data-tab="marca" aria-selected="false" aria-controls="panel-marca" tabindex="-1"><b>3</b>Marca</button>
+      <button type="button" class="studio-tab" role="tab" id="tab-fondo" data-tab="fondo" aria-selected="false" aria-controls="panel-fondo" tabindex="-1"><b>4</b>Fondo</button>
+      <button type="button" class="studio-tab" role="tab" id="tab-horarios" data-tab="horarios" aria-selected="false" aria-controls="panel-horarios" tabindex="-1"><b>5</b>Horarios</button>
+      <button type="button" class="studio-tab" role="tab" id="tab-items" data-tab="items" aria-selected="false" aria-controls="panel-items" tabindex="-1"><b>6</b>Ítems</button>
+      <button type="button" class="studio-tab" role="tab" id="tab-tarjetas" data-tab="tarjetas" aria-selected="false" aria-controls="panel-tarjetas" tabindex="-1"><b>7</b>Tarjetas</button>
+    </div>
+
+    <div class="studio-panel" role="tabpanel" id="panel-ejemplo" aria-labelledby="tab-ejemplo">
+      <div class="create-box">
+        <h3>Crear un ejemplo nuevo</h3>
+        <p>Elige la plantilla que más se parezca al negocio — cafetería, taquería o estética — y ponle nombre. El nuevo ejemplo nace con los ítems de esa muestra para que solo ajustes lo que cambie: colores, marca, fondo, horarios y precios.</p>
+        <div class="base-btns" role="group" aria-label="Plantilla base del nuevo ejemplo">
+          <button type="button" class="base-btn" data-base="bruma" aria-pressed="true"><i style="background:#a34d1f"></i>Cafetería · Café Bruma</button>
+          <button type="button" class="base-btn" data-base="faro" aria-pressed="false"><i style="background:#b3271e"></i>Taquería · El Faro</button>
+          <button type="button" class="base-btn" data-base="luna" aria-pressed="false"><i style="background:#b04a72"></i>Estética · Luna</button>
+        </div>
+        <div class="create-row">
+          <div class="field">
+            <label for="nuevo-nombre">Nombre del nuevo negocio</label>
+            <input type="text" id="nuevo-nombre" maxlength="40" autocomplete="off" placeholder="Ej. Café Aurora, Tacos Don Pepe…" />
+          </div>
+          <button type="button" class="btn" id="crear-ejemplo" style="background:var(--accent); border-color:var(--accent); color:var(--accent-ink)">+ Crear ejemplo</button>
+        </div>
+        <p class="create-status" id="crear-estado" role="status" aria-live="polite"></p>
+      </div>
+      <div class="example-actions">
+        <span>Este ejemplo:</span>
+        <button type="button" class="btn small" id="duplicar">Duplicar</button>
+        <button type="button" class="btn small" id="restablecer">Restablecer a su plantilla</button>
+        <button type="button" class="btn small danger" id="eliminar-ejemplo" hidden>Eliminar ejemplo creado</button>
+      </div>
+      <div class="panel-next">
+        <span>¿Ya tienes tu ejemplo?</span>
+        <button type="button" class="btn small" data-goto="colores">Seguir con los colores →</button>
+      </div>
+    </div>
+
+    <div class="studio-panel" role="tabpanel" id="panel-colores" aria-labelledby="tab-colores" hidden>
       <div>
-        <h3>1 · Colores de tu marca</h3>
+        <h3>Colores de tu marca</h3>
         <div class="swatches" role="group" aria-label="Combinaciones de colores listas">
           <button type="button" class="swatch" data-theme="bruma" aria-pressed="true"><span class="dots"><i style="background:#a34d1f"></i><i style="background:#3a2417"></i><i style="background:#c98a2d"></i></span>Bruma cálido</button>
           <button type="button" class="swatch" data-theme="verde" aria-pressed="false"><span class="dots"><i style="background:#1f6f4a"></i><i style="background:#123524"></i><i style="background:#b98a2f"></i></span>Verde botella</button>
@@ -439,11 +582,30 @@
           <span id="color-hex" style="font-weight:600; color:var(--muted)">#A34D1F</span>
         </div>
       </div>
+      <div class="panel-next">
+        <span>El color se aplica a todo el menú de abajo al momento.</span>
+        <button type="button" class="btn small" data-goto="marca">Seguir con la marca →</button>
+      </div>
+    </div>
+
+    <div class="studio-panel" role="tabpanel" id="panel-marca" aria-labelledby="tab-marca" hidden>
       <div>
-        <h3>2 · Nombre y logo</h3>
+        <h3>Nombre, datos y logo</h3>
         <div class="field">
           <label for="nombre-negocio">Nombre de tu negocio</label>
           <input type="text" id="nombre-negocio" value="Café Bruma" maxlength="40" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="lugar-negocio">Giro y zona (encabezado)</label>
+          <input type="text" id="lugar-negocio" maxlength="60" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="eslogan-negocio">Descripción corta (encabezado)</label>
+          <input type="text" id="eslogan-negocio" maxlength="140" autocomplete="off" />
+        </div>
+        <div class="field">
+          <label for="ig-negocio">Instagram (usuario, con @)</label>
+          <input type="text" id="ig-negocio" maxlength="40" autocomplete="off" />
         </div>
         <div class="field" style="margin-bottom:0">
           <label>Marca en el encabezado</label>
@@ -461,10 +623,15 @@
           </div>
         </div>
       </div>
+      <div class="panel-next">
+        <span>El nombre y el logo se ven en el encabezado de arriba y en el menú resultante.</span>
+        <button type="button" class="btn small" data-goto="fondo">Seguir con el fondo →</button>
+      </div>
     </div>
 
+    <div class="studio-panel" role="tabpanel" id="panel-fondo" aria-labelledby="tab-fondo" hidden>
     <div class="studio-block">
-      <h3>3 · Imagen de fondo del encabezado</h3>
+      <h3>Imagen de fondo del encabezado</h3>
       <p class="hint">Elige una imagen de muestra o sube una foto de tu negocio. Cada caso guarda su propia imagen: la de Café Bruma no cambia la de la taquería ni la de la estética.</p>
       <div class="samples" id="samples" role="group" aria-label="Imágenes de fondo de muestra"></div>
       <div class="logo-actions">
@@ -473,10 +640,15 @@
         <button type="button" class="btn small" id="hero-quitar" hidden>Quitar foto subida</button>
       </div>
       <p class="hero-current" id="hero-current"></p>
+      <div class="panel-next">
+        <button type="button" class="btn small" data-goto="horarios">Seguir con los horarios →</button>
+      </div>
+    </div>
     </div>
 
+    <div class="studio-panel" role="tabpanel" id="panel-horarios" aria-labelledby="tab-horarios" hidden>
     <div class="studio-block">
-      <h3>4 · Horarios</h3>
+      <h3>Horarios</h3>
       <p class="hint">El horario general es el que se ve en las pastillas del encabezado. El de cada día es el que sale en la tabla de “Horario” hasta abajo del menú.</p>
       <div class="hours-grid">
         <div class="field">
@@ -493,19 +665,79 @@
         </div>
       </div>
       <div class="hours-grid" id="hours-days"></div>
+      <div class="panel-next">
+        <button type="button" class="btn small" data-goto="items">Seguir con los ítems →</button>
+      </div>
+    </div>
     </div>
 
+    <div class="studio-panel" role="tabpanel" id="panel-items" aria-labelledby="tab-items" hidden>
     <div class="studio-block">
-      <h3>5 · Ítems del menú</h3>
-      <p class="hint">Cambia el nombre, la descripción y el precio de cada ítem, quita los que no van o agrega nuevos en cada categoría. Se ve al momento en el menú de abajo.</p>
+      <h3>Ítems del menú</h3>
+      <p class="hint">Cambia el nombre, la descripción y el precio de cada ítem, quita los que no van o agrega nuevos en cada categoría. Se ve al momento en el menú resultante de abajo.</p>
       <div id="items-editor"></div>
     </div>
-
-    <div class="demo-brands">
-      <span>¿Te perdiste?</span>
-      <button type="button" class="btn small" id="restablecer">Restablecer este caso</button>
     </div>
-    <p class="studio-note">Vista previa de esta visita: nada se guarda ni se envía, y al recargar la página todo vuelve a los ejemplos originales. En el menú real de tu negocio, tu marca, tu foto, tus horarios y tus ítems quedan fijos en tu menú y en tu código QR.</p>
+
+    <div class="studio-panel" role="tabpanel" id="panel-tarjetas" aria-labelledby="tab-tarjetas" hidden>
+      <p class="panel-lead">La tarjeta de presentación digital del negocio: para el dueño, un socio o un vendedor. Se pinta con los colores y el logo del ejemplo de menú que está en edición (pestañas Colores y Marca), y la vista previa se mueve en vivo conforme escribes. Cada persona tiene su propia tarjeta: cámbiala con las pestañitas de abajo.</p>
+      <div class="card-tabs" role="tablist" aria-label="Tarjetas de presentación" id="card-tabs"></div>
+      <div class="card-layout">
+        <div>
+          <div class="field">
+            <label for="c-nombre">Nombre de la persona</label>
+            <input type="text" id="c-nombre" maxlength="50" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="c-puesto">Puesto</label>
+            <select id="c-puesto">
+              <option value="Dueño">Dueño</option>
+              <option value="Socio">Socio</option>
+              <option value="Vendedor">Vendedor</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="c-negocio">Negocio</label>
+            <input type="text" id="c-negocio" maxlength="50" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="c-telefono">Teléfono / WhatsApp</label>
+            <input type="text" id="c-telefono" maxlength="25" autocomplete="off" inputmode="tel" />
+          </div>
+          <div class="field">
+            <label for="c-ig">Instagram</label>
+            <input type="text" id="c-ig" maxlength="40" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="c-fb">Facebook</label>
+            <input type="text" id="c-fb" maxlength="50" autocomplete="off" />
+          </div>
+          <div class="field">
+            <label for="c-correo">Correo</label>
+            <input type="text" id="c-correo" maxlength="60" autocomplete="off" inputmode="email" />
+          </div>
+          <div class="card-actions">
+            <button type="button" class="btn small" id="tarjeta-nueva" style="background:var(--accent); border-color:var(--accent); color:var(--accent-ink)">+ Nueva tarjeta</button>
+            <button type="button" class="btn small" id="tarjeta-duplicar">Duplicar</button>
+            <button type="button" class="btn small danger" id="tarjeta-eliminar">Eliminar tarjeta</button>
+          </div>
+        </div>
+        <div>
+          <h3 style="margin-bottom:.6rem">Vista previa en vivo</h3>
+          <div id="tarjeta-preview"></div>
+          <p class="bc-note">Datos de ejemplo, ilustrativos. En la tarjeta real, el botón de WhatsApp abre la conversación con el número de la persona y cada dato lleva a su cuenta o correo.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="result-bar">
+      <div>
+        <h3>Resultado: <span id="result-name">Café Bruma</span></h3>
+        <p id="result-summary">Abajo está el menú ya armado con este ejemplo: sus colores, su marca, su fondo, sus horarios y sus ítems.</p>
+      </div>
+      <button type="button" class="btn" id="ver-resultado">Ver el menú resultante ↓</button>
+    </div>
+    <p class="studio-note">Vista previa de esta visita: nada se guarda ni se envía, y al recargar la página todo vuelve a las muestras originales. En el menú real de tu negocio, tu marca, tu foto, tus horarios y tus ítems quedan fijos en tu menú y en tu código QR.</p>
   </div>
 </section>
 
@@ -715,6 +947,27 @@
   var active = 'bruma';
   function cur(){ return state[active]; }
 
+  /* Created examples: order, base template and counter (this visit only) */
+  var caseOrder = ['bruma', 'faro', 'luna'];
+  var customBase = {};
+  var nuevoCount = 0;
+  var selectedBase = 'bruma';
+  function isCustom(id){ return !(id in DEFAULTS); }
+  function renderCaseSwitch(){
+    var html = '';
+    caseOrder.forEach(function(id){
+      if (!state[id]) return;
+      html += '<button type="button" class="case-btn" data-case="' + id + '" aria-pressed="' + (id === active ? 'true' : 'false') + '">'
+        + '<i style="background:' + esc(state[id].customColor || '#888888') + '"></i>'
+        + esc(state[id].name || 'Sin nombre')
+        + (isCustom(id) ? ' · nuevo' : '')
+        + '</button>';
+    });
+    $('case-list').innerHTML = html;
+    var del = $('eliminar-ejemplo');
+    if (del) del.hidden = !isCustom(active);
+  }
+
   /* ================= Helpers ================= */
   function esc(s){
     return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
@@ -798,6 +1051,7 @@
     var btns = document.querySelectorAll('.mark-btn');
     btns.forEach(function(b){ b.setAttribute('aria-pressed', (!s.logo && b.getAttribute('data-mark') === s.mark) ? 'true' : 'false'); });
     $('logo-quitar').hidden = !s.logo;
+    if (typeof renderCardPreview === 'function') renderCardPreview();
   }
   function renderBrand(){
     var s = cur();
@@ -931,9 +1185,19 @@
     $('menu-root').innerHTML = html;
     renderCatnav();
     applySearch();
+    renderResult();
+  }
+  function renderResult(){
+    var s = cur(), total = 0;
+    s.cats.forEach(function(cat){ total += cat.items.length; });
+    $('result-name').textContent = s.name || 'Tu negocio';
+    $('result-summary').textContent = 'Abajo está el menú ya armado con este ejemplo: '
+      + s.cats.length + (s.cats.length === 1 ? ' categoría' : ' categorías') + ' y '
+      + total + (total === 1 ? ' ítem' : ' ítems')
+      + ', con sus colores, su marca, su fondo y sus horarios. Es un menú distinto al de las muestras si cambiaste algo en las pestañas.';
   }
   function renderCatnav(){
-    var s = cur(), html = '<a href="#personalizar">Ponle tu marca</a>';
+    var s = cur(), html = '<a href="#personalizar">Crear tu ejemplo</a>';
     s.cats.forEach(function(cat){ html += '<a href="#' + esc(cat.id) + '">' + esc(cat.title) + '</a>'; });
     html += '<a href="#info">Horario y contacto</a>';
     $('catnav-links').innerHTML = html;
@@ -1010,12 +1274,71 @@
     }
   }
 
+  /* ================= Digital business cards ================= */
+  var CARDS = [
+    {name:'Rodrigo Fuentes', role:'Dueño', biz:'Café Bruma', phone:'81 1234 5678', ig:'@cafebruma.ejemplo', fb:'Café Bruma', email:'rodrigo@cafebruma.ejemplo'},
+    {name:'Mariana Solís', role:'Socio', biz:'Taquería El Faro', phone:'81 8765 4321', ig:'@taqueriaelfaro.ejemplo', fb:'Taquería El Faro', email:'mariana@elfaro.ejemplo'},
+    {name:'Valeria Luna', role:'Vendedor', biz:'Estética Luna', phone:'81 5555 2468', ig:'@esteticaluna.ejemplo', fb:'Estética Luna', email:'valeria@esteticaluna.ejemplo'}
+  ];
+  var activeCard = 0;
+  function card(){ return CARDS[activeCard]; }
+  var BC_ICONS = {
+    wa:'<svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.4.6c-.1.2-.3.4-.1.7.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l.9-1c.2-.3.4-.2.7-.1l2 .9c.3.2.5.3.6.4 0 .1 0 .7-.2 1.1Z"/></svg>',
+    ig:'<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>',
+    fb:'<svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.5-1 .9-1H17V2.5h-2.9C11.2 2.5 10 4.4 10 6.5v2H7.5V12H10v9.5h4V12h2.7l.4-3.5H14Z"/></svg>',
+    mail:'<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>'
+  };
+  function renderCardTabs(){
+    var html = '';
+    CARDS.forEach(function(c, i){
+      html += '<button type="button" class="card-tab" role="tab" data-card="' + i + '" aria-selected="' + (i === activeCard ? 'true' : 'false') + '">'
+        + esc(c.name || 'Sin nombre') + ' <small>' + esc(c.role) + '</small></button>';
+    });
+    $('card-tabs').innerHTML = html;
+    $('tarjeta-eliminar').hidden = CARDS.length <= 1;
+  }
+  function renderCardForm(){
+    var c = card();
+    $('c-nombre').value = c.name;
+    $('c-puesto').value = c.role;
+    $('c-negocio').value = c.biz;
+    $('c-telefono').value = c.phone;
+    $('c-ig').value = c.ig;
+    $('c-fb').value = c.fb;
+    $('c-correo').value = c.email;
+  }
+  function renderCardPreview(){
+    var box = $('tarjeta-preview');
+    if (!box || !CARDS.length) return;
+    var c = card();
+    var rows = '';
+    if (c.phone) rows += '<span>' + BC_ICONS.wa + esc(c.phone) + '</span>';
+    if (c.ig) rows += '<span>' + BC_ICONS.ig + esc(c.ig) + '</span>';
+    if (c.fb) rows += '<span>' + BC_ICONS.fb + esc(c.fb) + '</span>';
+    if (c.email) rows += '<span>' + BC_ICONS.mail + esc(c.email) + '</span>';
+    box.innerHTML = '<div class="bc">'
+      + '<div class="bc-head"><div class="bc-badge" aria-hidden="true">' + $('brand-badge').innerHTML + '</div>'
+      + '<div><h3>' + esc(c.name || 'Nombre de la persona') + '</h3>'
+      + '<span class="bc-role">' + esc(c.role) + '</span></div></div>'
+      + '<p class="bc-biz">' + esc(c.biz || 'Nombre del negocio') + '</p>'
+      + '<div class="bc-contacts">' + rows + '</div>'
+      + '<div class="bc-foot"><button class="btn wa" type="button" data-card-demo="1">'
+      + BC_ICONS.wa + ' WhatsApp directo</button></div>'
+      + '</div>';
+  }
+  function renderCards(){
+    renderCardTabs();
+    renderCardForm();
+    renderCardPreview();
+  }
+
   /* ================= Apply / switch cases ================= */
   function applyAll(){
-    document.querySelectorAll('.case-btn').forEach(function(b){
-      b.setAttribute('aria-pressed', b.getAttribute('data-case') === active ? 'true' : 'false');
-    });
+    renderCaseSwitch();
     $('nombre-negocio').value = cur().name;
+    $('lugar-negocio').value = cur().place;
+    $('eslogan-negocio').value = cur().tag;
+    $('ig-negocio').value = cur().ig;
     $('logo-file').value = '';
     $('hero-file').value = '';
     applyCasePalette();
@@ -1034,8 +1357,89 @@
   }
 
   /* ================= Panel wiring ================= */
-  document.querySelectorAll('.case-btn').forEach(function(b){
-    b.addEventListener('click', function(){ switchCase(b.getAttribute('data-case')); });
+  $('case-list').addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('.case-btn') : null;
+    if (b) switchCase(b.getAttribute('data-case'));
+  });
+
+  /* ================= Studio tabs ================= */
+  var tabBtns = Array.prototype.slice.call(document.querySelectorAll('.studio-tab'));
+  function showTab(name, focus){
+    tabBtns.forEach(function(t){
+      var on = t.getAttribute('data-tab') === name;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      if (on && focus) t.focus();
+    });
+    document.querySelectorAll('.studio-panel').forEach(function(p){
+      p.hidden = p.id !== 'panel-' + name;
+    });
+  }
+  tabBtns.forEach(function(t, i){
+    t.addEventListener('click', function(){ showTab(t.getAttribute('data-tab'), false); });
+    t.addEventListener('keydown', function(e){
+      var idx = null;
+      if (e.key === 'ArrowRight') idx = (i + 1) % tabBtns.length;
+      else if (e.key === 'ArrowLeft') idx = (i - 1 + tabBtns.length) % tabBtns.length;
+      else if (e.key === 'Home') idx = 0;
+      else if (e.key === 'End') idx = tabBtns.length - 1;
+      if (idx !== null){ e.preventDefault(); showTab(tabBtns[idx].getAttribute('data-tab'), true); }
+    });
+  });
+  document.querySelectorAll('[data-goto]').forEach(function(b){
+    b.addEventListener('click', function(){
+      showTab(b.getAttribute('data-goto'), false);
+      $('personalizar').scrollIntoView({behavior:'smooth'});
+    });
+  });
+  $('ver-resultado').addEventListener('click', function(){
+    var target = document.querySelector('.catnav');
+    if (target) target.scrollIntoView({behavior:'smooth'});
+  });
+
+  /* ================= Create / duplicate / delete examples ================= */
+  document.querySelectorAll('.base-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      selectedBase = b.getAttribute('data-base');
+      document.querySelectorAll('.base-btn').forEach(function(x){
+        x.setAttribute('aria-pressed', x === b ? 'true' : 'false');
+      });
+    });
+  });
+  function addExample(fromObj, name, baseId){
+    nuevoCount += 1;
+    var id = 'nuevo-' + nuevoCount;
+    state[id] = clone(fromObj);
+    if (name) state[id].name = name;
+    customBase[id] = baseId;
+    caseOrder.push(id);
+    active = id;
+    applyAll();
+    return id;
+  }
+  $('crear-ejemplo').addEventListener('click', function(){
+    var name = $('nuevo-nombre').value.trim();
+    addExample(DEFAULTS[selectedBase], name || null, selectedBase);
+    $('nuevo-nombre').value = '';
+    $('crear-estado').textContent = 'Ejemplo creado: “' + cur().name + '”. Ya está en edición arriba; sigue en la pestaña Colores para hacerlo distinto a la muestra.';
+    showTab('colores', false);
+  });
+  $('duplicar').addEventListener('click', function(){
+    var baseName = cur().name || 'Mi negocio';
+    addExample(cur(), baseName + ' (copia)', isCustom(active) ? customBase[active] : active);
+    $('crear-estado').textContent = 'Duplicaste el ejemplo: ahora editas “' + cur().name + '” y el original queda intacto.';
+    showTab('ejemplo', false);
+  });
+  $('eliminar-ejemplo').addEventListener('click', function(){
+    if (!isCustom(active)) return;
+    var gone = cur().name;
+    delete state[active];
+    delete customBase[active];
+    caseOrder = caseOrder.filter(function(id){ return state[id]; });
+    active = 'bruma';
+    applyAll();
+    $('crear-estado').textContent = 'Eliminaste el ejemplo “' + gone + '”. Las muestras originales no se tocaron.';
+    showTab('ejemplo', false);
   });
   document.querySelectorAll('.swatch').forEach(function(sw){
     sw.addEventListener('click', function(){
@@ -1050,6 +1454,20 @@
   });
   $('nombre-negocio').addEventListener('input', function(){
     cur().name = $('nombre-negocio').value;
+    renderBrand();
+    renderCaseSwitch();
+    renderResult();
+  });
+  $('lugar-negocio').addEventListener('input', function(){
+    cur().place = $('lugar-negocio').value;
+    renderBrand();
+  });
+  $('eslogan-negocio').addEventListener('input', function(){
+    cur().tag = $('eslogan-negocio').value;
+    renderBrand();
+  });
+  $('ig-negocio').addEventListener('input', function(){
+    cur().ig = $('ig-negocio').value;
     renderBrand();
   });
   document.querySelectorAll('.mark-btn').forEach(function(b){
@@ -1084,8 +1502,16 @@
   $('h-general').addEventListener('input', function(){ cur().general = $('h-general').value; renderHours(); });
   $('h-general2').addEventListener('input', function(){ cur().general2 = $('h-general2').value; renderHours(); });
   $('restablecer').addEventListener('click', function(){
-    state[active] = clone(DEFAULTS[active]);
+    if (isCustom(active)){
+      var keepName = cur().name;
+      state[active] = clone(DEFAULTS[customBase[active]]);
+      state[active].name = keepName;
+      $('crear-estado').textContent = 'Ejemplo restablecido a su plantilla base, conservando el nombre “' + keepName + '”.';
+    } else {
+      state[active] = clone(DEFAULTS[active]);
+    }
     applyAll();
+    showTab('ejemplo', false);
     $('personalizar').scrollIntoView({behavior:'smooth'});
   });
   $('buscador').addEventListener('input', applySearch);
@@ -1107,6 +1533,55 @@
   });
   $('demo-close').addEventListener('click', function(){ dialog.close(); });
   dialog.addEventListener('click', function(e){ if (e.target === dialog) dialog.close(); });
+
+  /* ================= Business cards wiring ================= */
+  $('card-tabs').addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('.card-tab') : null;
+    if (!b) return;
+    activeCard = Number(b.getAttribute('data-card'));
+    renderCards();
+  });
+  [['c-nombre','name'],['c-negocio','biz'],['c-telefono','phone'],['c-ig','ig'],['c-fb','fb'],['c-correo','email']].forEach(function(pair){
+    $(pair[0]).addEventListener('input', function(){
+      card()[pair[1]] = $(pair[0]).value;
+      renderCardTabs();
+      renderCardPreview();
+    });
+  });
+  $('c-puesto').addEventListener('change', function(){
+    card().role = $('c-puesto').value;
+    renderCardTabs();
+    renderCardPreview();
+  });
+  $('tarjeta-nueva').addEventListener('click', function(){
+    CARDS.push({name:'', role:'Dueño', biz:cur().name || '', phone:'', ig:cur().ig || '', fb:cur().name || '', email:''});
+    activeCard = CARDS.length - 1;
+    renderCards();
+    var f = $('c-nombre');
+    f.focus();
+    f.scrollIntoView({block:'center', behavior:'smooth'});
+  });
+  $('tarjeta-duplicar').addEventListener('click', function(){
+    var copy = clone(card());
+    copy.name = (copy.name || 'Tarjeta') + ' (copia)';
+    CARDS.splice(activeCard + 1, 0, copy);
+    activeCard += 1;
+    renderCards();
+  });
+  $('tarjeta-eliminar').addEventListener('click', function(){
+    if (CARDS.length <= 1) return;
+    CARDS.splice(activeCard, 1);
+    activeCard = Math.max(0, activeCard - 1);
+    renderCards();
+  });
+  document.addEventListener('click', function(e){
+    var b = e.target.closest ? e.target.closest('[data-card-demo]') : null;
+    if (!b) return;
+    var c = card();
+    demoText.textContent = 'En la tarjeta real de ' + (c.name || 'esta persona') + ', este botón abre una conversación de WhatsApp con su número (' + (c.phone || 'sin número en el ejemplo') + '), lista para escribirle. Aquí no lleva a ningún número, porque es una tarjeta de ejemplo.';
+    if (typeof dialog.showModal === 'function') dialog.showModal();
+  });
+  renderCards();
 
   /* ================= Init ================= */
   renderSamples();
