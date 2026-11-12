@@ -223,6 +223,21 @@
         font-weight: 600; font-size: 0.95rem;
       }
 
+      /* Ejemplos reales */
+      .examples-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+      .example-item {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 20px 24px;
+        display: flex; flex-wrap: wrap; gap: 14px;
+        align-items: center; justify-content: space-between;
+      }
+      .example-item h3 { font-size: 1.2rem; font-weight: 800; }
+      .example-item p { margin-top: 4px; color: var(--ink-soft); }
+      .example-giro { font-weight: 700; color: var(--teal); }
+
       /* Example */
       .example-banner {
         background: var(--teal-deep); color: #eaf5f0;
@@ -441,6 +456,24 @@
           </article>
         </div>
         <p class="plans-note">Las tarjetas de presentación digitales no tienen mensualidad: cada tarjeta adicional cuesta $100, y suelta, sin paquete, es un pago único de $150. · Vigencia 1 año*</p>
+      </section>
+
+      <!-- ================= EJEMPLOS REALES ================= -->
+      <section id="ejemplos" aria-labelledby="ejemplos-h">
+        <div class="sec-head">
+          <h2 id="ejemplos-h">Mira un menú real funcionando</h2>
+          <p>Ejemplos reales de menús hechos con MenúListo. Ábrelos y navega como lo haría un cliente.</p>
+        </div>
+        <ul class="examples-list">
+          <!-- Para agregar otro ejemplo, copia un <li class="example-item"> con su nombre, giro y enlace. -->
+          <li class="example-item">
+            <div>
+              <h3>Café Bruma</h3>
+              <p><span class="example-giro">Cafetería</span> · Un ejemplo real funcionando: un menú de verdad hecho con MenúListo.</p>
+            </div>
+            <a class="btn btn-teal" href="https://criskuddy.github.io/menu-listo-/cafe-bruma/" target="_blank" rel="noopener">Ver el menú de Café Bruma</a>
+          </li>
+        </ul>
       </section>
 
       <!-- ================= CÓMO FUNCIONA ================= -->
