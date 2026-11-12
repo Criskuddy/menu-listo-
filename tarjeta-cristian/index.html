@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>Tarjeta de Cristian Monsiviais</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F3F1EC;
+    --bg-2:#ECE8E0;
+    --surface:#FFFFFF;
+    --surface-2:#F9F7F2;
+    --ink:#13201D;
+    --ink-2:#4A5A56;
+    --ink-3:#7A8A86;
+    --line:#DDD8CE;
+    --teal:#0B6B5A;
+    --teal-dark:#073F36;
+    --teal-mid:#0E7C6B;
+    --amber:#E8A33D;
+    --amber-soft:#FEF3D9;
+    --radius:20px;
+    --shadow:0 18px 40px rgba(19,32,29,.12), 0 2px 8px rgba(19,32,29,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0E1513;
+      --bg-2:#121D1A;
+      --surface:#182420;
+      --surface-2:#1E2D29;
+      --ink:#EAF2EF;
+      --ink-2:#A9BDB8;
+      --ink-3:#7E938E;
+      --line:#2A3B37;
+      --amber-soft:#2E2716;
+      --shadow:0 18px 40px rgba(0,0,0,.45), 0 2px 8px rgba(0,0,0,.3);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  button, a.btn, .chip{min-height:44px}
+  .wrap{max-width:1080px;margin:0 auto;padding:20px 18px 56px}
+  @media(min-width:720px){.wrap{padding:32px 28px 72px}}
+
+  /* ---------- Tarjeta principal ---------- */
+  .section-label{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:var(--teal);margin:6px 2px 14px}
+  .section-label::after{content:"";height:1px;background:var(--line);flex:1}
+  @media (prefers-color-scheme: dark){.section-label{color:#3EC9AE}}
+
+  .main-card{background:linear-gradient(145deg,#0A4A3F 0%, #073F36 52%, #052E28 100%);color:#fff;border-radius:28px;overflow:hidden;box-shadow:var(--shadow);position:relative}
+  .main-card::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(600px 220px at 110% -10%, rgba(232,163,61,.28), transparent 60%),
+    radial-gradient(420px 200px at -10% 110%, rgba(62,201,174,.18), transparent 60%);pointer-events:none}
+  .main-card-inner{position:relative;padding:28px 24px 24px}
+  @media(min-width:720px){.main-card-inner{padding:38px 40px 32px;display:grid;grid-template-columns:1.25fr .85fr;gap:32px;align-items:start}}
+  .brand-row{display:flex;align-items:center;gap:12px;margin-bottom:26px}
+  .brand-mark{width:46px;height:46px;border-radius:13px;background:var(--amber);color:#1A1406;display:grid;place-items:center;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:18px;letter-spacing:-.02em;flex:none}
+  .brand-row strong{font-family:"Bricolage Grotesque",sans-serif;font-size:19px;letter-spacing:-.01em;display:block;line-height:1}
+  .brand-row span{font-size:12.5px;color:rgba(255,255,255,.72);font-weight:600}
+  .qr-badge{margin-left:auto;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:7px 10px;border-radius:999px;white-space:nowrap}
+  .avatar{width:76px;height:76px;border-radius:50%;background:#fff;color:var(--teal-dark);display:grid;place-items:center;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:26px;border:3px solid var(--amber);margin-bottom:16px}
+  h1{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(34px,6vw,48px);line-height:.95;letter-spacing:-.03em;margin:0 0 8px;font-weight:800}
+  .role{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#1D1503;font-weight:800;font-size:14px;padding:8px 12px;border-radius:999px;margin-bottom:14px}
+  .role i{width:7px;height:7px;border-radius:50%;background:#1D1503;display:block}
+  .desc{color:rgba(255,255,255,.84);font-size:16px;line-height:1.55;margin:0 0 20px;max-width:46ch}
+  .phone-box{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:14px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .phone-box small{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.62);font-weight:800;margin-bottom:2px}
+  .phone-box strong{font-size:20px;letter-spacing:.01em}
+  .copy-btn{margin-left:auto;background:#fff;color:#073F36;border:0;border-radius:999px;padding:0 16px;font-weight:800;font-size:14px;cursor:pointer;min-height:40px}
+  .copy-btn:active{transform:scale(.98)}
+
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+  @media(min-width:720px){.actions{margin-top:0}}
+  .action{display:flex;flex-direction:column;gap:6px;text-decoration:none;border-radius:18px;padding:16px;min-height:92px;justify-content:space-between;border:1px solid transparent}
+  .action svg{width:24px;height:24px;flex:none}
+  .action b{font-size:15px;line-height:1.1}
+  .action span{font-size:12.5px;opacity:.82;line-height:1.3}
+  .action.wa{background:#22C55E;color:#061A0E}
+  .action.call{background:#fff;color:#13201D}
+  .action.ig{background:#111827;color:#fff;border-color:rgba(255,255,255,.14)}
+  .action.fb{background:#1877F2;color:#fff}
+  .action.full{grid-column:1/-1;flex-direction:row;align-items:center;min-height:52px;background:transparent;color:#fff;border-color:rgba(255,255,255,.25)}
+  .action.full span{margin-left:auto}
+
+  .main-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .main-meta span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:700;color:var(--ink-2)}
+  .main-meta span b{color:var(--ink)}
+
+  /* ---------- Escenarios ---------- */
+  .scenarios{margin-top:46px}
+  .scenarios-head{max-width:680px}
+  .scenarios-head h2{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(28px,4.5vw,38px);line-height:1.02;letter-spacing:-.03em;margin:0 0 10px}
+  .scenarios-head p{color:var(--ink-2);font-size:16px;line-height:1.6;margin:0}
+  .filters{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 18px}
+  .chip{border:1px solid var(--line);background:var(--surface);color:var(--ink-2);border-radius:999px;padding:0 16px;font-weight:800;font-size:14px;cursor:pointer}
+  .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  @media (prefers-color-scheme: dark){.chip[aria-pressed="true"]{background:#EAF2EF;color:#0E1513;border-color:#EAF2EF}}
+
+  .grid{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:680px){.grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:980px){.grid{grid-template-columns:1fr 1fr 1fr}}
+  .ex-card{border-radius:22px;overflow:hidden;background:var(--surface);border:1px solid var(--line);box-shadow:0 8px 24px rgba(19,32,29,.06);display:flex;flex-direction:column}
+  .ex-top{padding:20px 20px 16px;color:#fff;position:relative;overflow:hidden}
+  .ex-top::after{content:"";position:absolute;right:-28px;top:-28px;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.14)}
+  .ex-giro{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;opacity:.9;display:flex;justify-content:space-between;gap:8px;position:relative;z-index:1}
+  .ex-giro em{font-style:normal;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.22);padding:4px 8px;border-radius:999px;letter-spacing:.02em;text-transform:none}
+  .ex-logo{width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.96);display:grid;place-items:center;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:18px;margin:16px 0 12px;position:relative;z-index:1}
+  .ex-biz{font-family:"Bricolage Grotesque",sans-serif;font-size:22px;line-height:1;letter-spacing:-.02em;margin:0;position:relative;z-index:1}
+  .ex-biz-sub{font-size:13px;opacity:.86;margin-top:5px;position:relative;z-index:1}
+  .ex-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:14px;flex:1}
+  .person{display:flex;gap:12px;align-items:center}
+  .person-avatar{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:15px;color:#fff;flex:none}
+  .person b{display:block;font-size:16px;line-height:1.1}
+  .person span{font-size:13.5px;color:var(--ink-2);font-weight:700}
+  .ex-desc{font-size:14px;line-height:1.55;color:var(--ink-2);margin:0}
+  .palette{display:flex;align-items:center;gap:6px}
+  .palette i{width:18px;height:18px;border-radius:50%;border:2px solid var(--surface);box-shadow:0 0 0 1px var(--line);display:block}
+  .palette span{font-size:12px;color:var(--ink-3);font-weight:700;margin-left:4px}
+  .ex-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto}
+  .ex-actions a{text-decoration:none;border-radius:12px;padding:10px 12px;font-weight:800;font-size:13.5px;display:flex;align-items:center;justify-content:center;gap:7px;min-height:44px;text-align:center}
+  .ex-actions a.primary{color:#fff}
+  .ex-actions a.ghost{background:var(--surface-2);border:1px solid var(--line);color:var(--ink)}
+  .ex-actions svg{width:17px;height:17px}
+
+  /* Themes per giro */
+  .theme-cafe .ex-top{background:#6B3F22}
+  .theme-cafe .ex-logo{color:#6B3F22}.theme-cafe .person-avatar{background:#A67C52}.theme-cafe .ex-actions a.primary{background:#6B3F22}
+  .theme-taco .ex-top{background:#B91C1C}
+  .theme-taco .ex-logo{color:#B91C1C}.theme-taco .person-avatar{background:#D97706}.theme-taco .ex-actions a.primary{background:#B91C1C}
+  .theme-estetica .ex-top{background:#9D4E6B}
+  .theme-estetica .ex-logo{color:#9D4E6B}.theme-estetica .person-avatar{background:#C97A95}.theme-estetica .ex-actions a.primary{background:#9D4E6B}
+  .theme-barberia .ex-top{background:#111827}
+  .theme-barberia .ex-logo{color:#111827;background:#E8C15A}.theme-barberia .person-avatar{background:#374151}.theme-barberia .ex-actions a.primary{background:#111827}
+  .theme-unas .ex-top{background:#7C5C8A}
+  .theme-unas .ex-logo{color:#7C5C8A}.theme-unas .person-avatar{background:#B18AC2}.theme-unas .ex-actions a.primary{background:#7C5C8A}
+
+  .note{margin-top:20px;background:var(--amber-soft);border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start}
+  .note p{margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+  .note p b{color:var(--ink)}
+  .note svg{width:20px;height:20px;flex:none;margin-top:2px;color:var(--teal)}
+  footer{margin-top:28px;text-align:center;color:var(--ink-3);font-size:13px;font-weight:600}
+  .toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,16px);background:#13201D;color:#fff;padding:12px 16px;border-radius:999px;font-weight:800;font-size:14px;opacity:0;pointer-events:none;transition:.22s;z-index:20;box-shadow:0 12px 30px rgba(0,0,0,.25);max-width:calc(100vw - 32px);text-align:center}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+  .hidden{display:none !important}
+  @media (prefers-reduced-motion: reduce){*{scroll-behavior:auto !important;transition:none !important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- TARJETA SOLA -->
+  <p class="section-label">Tarjeta digital · MenúListo</p>
+
+  <article class="main-card" aria-label="Tarjeta de Cristian Monsiviais">
+    <div class="main-card-inner">
+      <div>
+        <div class="brand-row">
+          <div class="brand-mark">ML</div>
+          <div><strong>MenúListo</strong><span>Menús digitales con QR</span></div>
+          <span class="qr-badge">Con QR</span>
+        </div>
+
+        <div class="avatar" aria-hidden="true">CM</div>
+        <h1>Cristian<br>Monsiviais</h1>
+        <div class="role"><i></i> Fundador de MenúListo</div>
+        <p class="desc">Ayudo a negocios de Monterrey centro a tener su menú o catálogo digital con QR: fácil de compartir, fácil de actualizar y listo para recibir pedidos y mensajes.</p>
+
+        <div class="phone-box">
+          <div>
+            <small>WhatsApp y llamadas</small>
+            <strong>+52 81 1300 9691</strong>
+          </div>
+          <button class="copy-btn" id="copyBtn" type="button">Copiar número</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="actions" aria-label="Contacto de Cristian Monsiviais">
+          <a class="action wa" href="https://wa.me/528113009691?text=Hola%20Cristian%2C%20quiero%20informaci%C3%B3n%20sobre%20Men%C3%BAListo" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5-.3.6-.6.8-.4 1.1.7 1.2 1.6 2 2.8 2.6.3.2.5.1.7-.1l.9-1c.2-.3.4-.2.7-.1l2 .9c.3.2.5.3.6.4 0 .1 0 .7-.2 1.2Z"/></svg>
+            <div><b>WhatsApp</b><br><span>Respuesta directa con Cristian</span></div>
+          </a>
+          <a class="action call" href="tel:+528113009691">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg>
+            <div><b>Llamar</b><br><span>81 1300 9691</span></div>
+          </a>
+          <a class="action ig" href="https://instagram.com/menulisto" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>
+            <div><b>Instagram</b><br><span>@menulisto</span></div>
+          </a>
+          <a class="action fb" href="https://facebook.com/menulisto" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8h2.5V4.5H14A4.5 4.5 0 0 0 9.5 9v2H7v3.5h2.5V22H13v-7.5h2.6l.4-3.5h-3V9c0-.6.4-1 1-1Z"/></svg>
+            <div><b>Facebook</b><br><span>@menulisto</span></div>
+          </a>
+          <button class="action full" id="saveBtn" type="button">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>
+            <b>Guardar contacto</b><span>Descargar vCard →</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <div class="main-meta" aria-label="Datos de la tarjeta">
+    <span>📍 <b>Monterrey centro</b></span>
+    <span>Prueba gratis <b>15 días</b></span>
+    <span>Menús · Catálogos · <b>Tarjetas digitales</b></span>
+  </div>
+
+  <!-- DISEÑOS PARA DISTINTOS ESCENARIOS -->
+  <section class="scenarios" id="escenarios">
+    <p class="section-label">Aparte · Para mostrar a clientes</p>
+    <div class="scenarios-head">
+      <h2>Diseños para distintos escenarios</h2>
+      <p>Cada giro se ve distinto. Estos son ejemplos de cómo quedaría la tarjeta digital según el tipo de negocio, con sus colores, su marca y el puesto de la persona: dueño, socio o vendedor.</p>
+    </div>
+
+    <div class="filters" role="group" aria-label="Filtrar por giro">
+      <button class="chip" type="button" data-filter="all" aria-pressed="true">Todos</button>
+      <button class="chip" type="button" data-filter="cafeteria" aria-pressed="false">Cafetería</button>
+      <button class="chip" type="button" data-filter="taqueria" aria-pressed="false">Taquería</button>
+      <button class="chip" type="button" data-filter="estetica" aria-pressed="false">Estética</button>
+      <button class="chip" type="button" data-filter="barberia" aria-pressed="false">Barbería</button>
+      <button class="chip" type="button" data-filter="unas" aria-pressed="false">Uñas</button>
+    </div>
+
+    <div class="grid" id="grid">
+
+      <article class="ex-card theme-cafe" data-cat="cafeteria">
+        <div class="ex-top">
+          <div class="ex-giro"><span>Cafetería</span><em>Ejemplo</em></div>
+          <div class="ex-logo">CB</div>
+          <h3 class="ex-biz">Café Bruma</h3>
+          <div class="ex-biz-sub">Cafetería · Centro</div>
+        </div>
+        <div class="ex-body">
+          <div class="person"><div class="person-avatar">MT</div><div><b>Mariana Torres</b><span>Dueña · Café Bruma</span></div></div>
+          <p class="ex-desc">Tono cálido y artesanal, pensado para una cafetería que comparte su tarjeta en mesa, en Instagram y en pedidos para llevar.</p>
+          <div class="palette"><i style="background:#6B3F22"></i><i style="background:#A67C52"></i><i style="background:#F3E6D3"></i><span>Marrón · Camel · Crema</span></div>
+          <div class="ex-actions">
+            <a class="primary" href="#" onclick="return demo(event)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg> WhatsApp</a>
+            <a class="ghost" href="#" onclick="return demo(event)">Ver menú</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="ex-card theme-taco" data-cat="taqueria">
+        <div class="ex-top">
+          <div class="ex-giro"><span>Taquería</span><em>Ejemplo</em></div>
+          <div class="ex-logo">EF</div>
+          <h3 class="ex-biz">Taquería El Faro</h3>
+          <div class="ex-biz-sub">Tacos y antojitos · Centro</div>
+        </div>
+        <div class="ex-body">
+          <div class="person"><div class="person-avatar">JL</div><div><b>José Luis Herrera</b><span>Vendedor · Taquería El Faro</span></div></div>
+          <p class="ex-desc">Colores fuertes y contraste alto para que se lea de lejos, ideal para repartir en volantes con QR y en pedidos a domicilio.</p>
+          <div class="palette"><i style="background:#B91C1C"></i><i style="background:#D97706"></i><i style="background:#FFF7E6"></i><span>Rojo · Mostaza · Hueso</span></div>
+          <div class="ex-actions">
+            <a class="primary" href="#" onclick="return demo(event)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg> WhatsApp</a>
+            <a class="ghost" href="#" onclick="return demo(event)">Ver menú</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="ex-card theme-estetica" data-cat="estetica">
+        <div class="ex-top">
+          <div class="ex-giro"><span>Estética</span><em>Ejemplo</em></div>
+          <div class="ex-logo">EL</div>
+          <h3 class="ex-biz">Estética Luna</h3>
+          <div class="ex-biz-sub">Belleza y estilismo · Centro</div>
+        </div>
+        <div class="ex-body">
+          <div class="person"><div class="person-avatar">VL</div><div><b>Valeria Luna</b><span>Socia · Estética Luna</span></div></div>
+          <p class="ex-desc">Diseño suave y elegante para compartir por Instagram y WhatsApp cuando una clienta pide informes o quiere agendar cita.</p>
+          <div class="palette"><i style="background:#9D4E6B"></i><i style="background:#C97A95"></i><i style="background:#FBEAF0"></i><span>Rosa vino · Rosa · Blush</span></div>
+          <div class="ex-actions">
+            <a class="primary" href="#" onclick="return demo(event)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg> Agendar cita</a>
+            <a class="ghost" href="#" onclick="return demo(event)">Ver servicios</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="ex-card theme-barberia" data-cat="barberia">
+        <div class="ex-top">
+          <div class="ex-giro"><span>Barbería</span><em>Ejemplo</em></div>
+          <div class="ex-logo">CF</div>
+          <h3 class="ex-biz">Barbería Corte Fino</h3>
+          <div class="ex-biz-sub">Barbería · Centro</div>
+        </div>
+        <div class="ex-body">
+          <div class="person"><div class="person-avatar">DR</div><div><b>Diego Ramírez</b><span>Dueño · Barbería Corte Fino</span></div></div>
+          <p class="ex-desc">Negro y dorado, sobrio y masculino. Funciona muy bien como tarjeta para repartir en el local y para cerrar citas por mensaje.</p>
+          <div class="palette"><i style="background:#111827"></i><i style="background:#E8C15A"></i><i style="background:#F3F4F6"></i><span>Negro · Dorado · Gris</span></div>
+          <div class="ex-actions">
+            <a class="primary" href="#" onclick="return demo(event)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg> Reservar</a>
+            <a class="ghost" href="#" onclick="return demo(event)">Ver servicios</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="ex-card theme-unas" data-cat="unas">
+        <div class="ex-top">
+          <div class="ex-giro"><span>Negocio de uñas</span><em>Ejemplo</em></div>
+          <div class="ex-logo">SN</div>
+          <h3 class="ex-biz">Studio Nails by Fer</h3>
+          <div class="ex-biz-sub">Uñas y nail art · Centro</div>
+        </div>
+        <div class="ex-body">
+          <div class="person"><div class="person-avatar">FS</div><div><b>Fernanda Solís</b><span>Vendedora · Studio Nails by Fer</span></div></div>
+          <p class="ex-desc">Tono lila y delicado, pensado para una tarjeta que se comparte en historias, grupos de WhatsApp y recomendaciones entre clientas.</p>
+          <div class="palette"><i style="background:#7C5C8A"></i><i style="background:#B18AC2"></i><i style="background:#F6EEFA"></i><span>Lila · Lavanda · Perla</span></div>
+          <div class="ex-actions">
+            <a class="primary" href="#" onclick="return demo(event)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg> WhatsApp</a>
+            <a class="ghost" href="#" onclick="return demo(event)">Ver catálogo</a>
+          </div>
+        </div>
+      </article>
+
+      <div class="ex-card" style="justify-content:center">
+        <div class="ex-body" style="justify-content:center;text-align:left">
+          <div style="font-size:28px">✦</div>
+          <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-size:22px;margin:6px 0 8px;line-height:1.05">¿Otro giro? Se adapta.</h3>
+          <p class="ex-desc">Taquerías, cafeterías, estéticas, barberías, uñas, talleres, tiendas y más. Cada tarjeta usa los colores, el logo y el nombre de tu negocio.</p>
+          <p class="ex-desc"><b style="color:var(--ink)">Incluidas:</b> 1 en Estándar y 3 en Premium, sin mensualidad. Adicional $100 · Pago único $150 por tarjeta.</p>
+          <div class="ex-actions" style="grid-template-columns:1fr">
+            <a class="primary" style="background:var(--teal)" href="https://wa.me/528113009691?text=Hola%20Cristian%2C%20quiero%20una%20tarjeta%20digital%20para%20mi%20negocio" target="_blank" rel="noopener">Pedir mi tarjeta con Cristian</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <p><b>Cómo usarlas:</b> la primera tarjeta es solo de Cristian, para compartirla sola. Los diseños de abajo son ejemplos por giro, para enseñarle a cada cliente cómo se vería la suya con su negocio.</p>
+    </div>
+  </section>
+
+  <footer>MenúListo · Cristian Monsiviais · +52 81 1300 9691 · @menulisto</footer>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+  var toastEl = document.getElementById('toast');
+  var toastTimer;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2400);
+  }
+  function demo(e){ e.preventDefault(); toast('Este es un diseño de ejemplo. La tarjeta real se crea con los datos de tu negocio.'); return false; }
+
+  document.getElementById('copyBtn').addEventListener('click', function(){
+    var num = '8113009691';
+    var full = '+52 81 1300 9691';
+    function done(){ toast('Número copiado: ' + full); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(full).then(done).catch(function(){ fallback(); });
+    } else { fallback(); }
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = full; ta.style.position='fixed'; ta.style.opacity='0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); done(); } catch(err){ toast(full); }
+      document.body.removeChild(ta);
+    }
+  });
+
+  document.getElementById('saveBtn').addEventListener('click', function(){
+    var vcard = [
+      'BEGIN:VCARD','VERSION:3.0',
+      'FN:Cristian Monsiviais',
+      'N:Monsiviais;Cristian;;;',
+      'ORG:MenúListo',
+      'TITLE:Fundador de MenúListo',
+      'TEL;TYPE=CELL,VOICE:+528113009691',
+      'TEL;TYPE=WORK,VOICE:+528113009691',
+      'URL:https://instagram.com/menulisto',
+      'NOTE:Menús digitales con QR - MenúListo, Monterrey centro. Instagram y Facebook: @menulisto',
+      'END:VCARD'
+    ].join('\r\n');
+    var blob = new Blob([vcard], {type:'text/vcard;charset=utf-8'});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url; a.download = 'Cristian-Monsiviais-Menulisto.vcf';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 800);
+    toast('Contacto descargado. Ábrelo para guardarlo en tu celular.');
+  });
+
+  // Filters
+  var chips = document.querySelectorAll('.chip');
+  var cards = document.querySelectorAll('#grid .ex-card[data-cat]');
+  chips.forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chips.forEach(function(c){ c.setAttribute('aria-pressed','false'); });
+      chip.setAttribute('aria-pressed','true');
+      var f = chip.getAttribute('data-filter');
+      cards.forEach(function(card){
+        var show = (f === 'all' || card.getAttribute('data-cat') === f);
+        card.classList.toggle('hidden', !show);
+      });
+    });
+  });
+</script>
+</body>
+</html>

@@ -235,7 +235,7 @@
       .bizcard .bc-brand { display: flex; align-items: center; gap: 10px; font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 1.15rem; }
       .bizcard .bc-brand .brand-mark { background: rgba(255,255,255,0.16); width: 38px; height: 38px; border-radius: 10px; }
       .bizcard .bc-brand .brand-mark svg { width: 21px; height: 21px; }
-      .bizcard .bc-name { margin-top: 30px; font-family: "Bricolage Grotesque", sans-serif; font-size: 2rem; font-weight: 800; }
+      .bizcard .bc-name { margin-top: 30px; font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(1.65rem, 4.5vw, 2rem); font-weight: 800; line-height: 1.08; }
       .bizcard .bc-role { color: #ffd9a8; font-weight: 700; margin-top: 2px; }
       .bizcard .bc-line { margin-top: 20px; display: grid; gap: 7px; font-size: 0.98rem; position: relative; z-index: 1; }
       .bizcard .bc-line span { display: flex; align-items: center; gap: 9px; }
@@ -245,6 +245,28 @@
       .btn-outline { background: var(--surface); color: var(--ink); border-color: var(--line); }
       .btn-outline:hover { background: var(--surface-2); }
       .copy-feedback { font-size: 0.9rem; color: var(--teal); font-weight: 600; min-height: 1.4em; }
+
+      /* Solo card view + design scenarios */
+      .solo-bar { display: none; margin-bottom: 18px; }
+      body.solo-card .hero, body.solo-card main > section:not(#tarjeta), body.solo-card footer { display: none !important; }
+      body.solo-card #tarjeta { padding-top: 18px; }
+      body.solo-card .solo-bar { display: block; }
+      body.solo-card .card-zone { max-width: 760px; margin: 0 auto; }
+      .designs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+      .design-card { border-radius: 20px; padding: 22px; min-height: 210px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow); overflow: hidden; position: relative; }
+      .design-card .dc-label { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.9; }
+      .design-card .dc-name { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.45rem; font-weight: 800; line-height: 1.1; margin-top: 14px; }
+      .design-card .dc-role { font-weight: 700; margin-top: 4px; }
+      .design-card .dc-meta { margin-top: 16px; font-size: 0.92rem; line-height: 1.5; }
+      .design-card .dc-note { margin-top: 14px; font-size: 0.88rem; opacity: 0.92; }
+      .dc-clasico { background: linear-gradient(150deg, var(--teal) 0%, var(--teal-deep) 80%); color: #fff; }
+      .dc-clasico .dc-role { color: #ffd9a8; }
+      .dc-dia { background: #fffdf8; color: #17352d; border: 1.5px solid var(--line); }
+      .dc-dia .dc-role { color: var(--teal); }
+      .dc-noche { background: #171717; color: #f5efe2; }
+      .dc-noche .dc-role { color: #f09a3e; }
+      @media (prefers-color-scheme: dark) { .dc-dia { background: #1d3d34; color: #f2ead9; border-color: #2c4a41; } }
+      @media (max-width: 860px) { .designs-grid { grid-template-columns: 1fr; } }
 
       footer { margin-top: 56px; border-top: 1px solid var(--line); padding: 26px 0 40px; }
       .foot { display: flex; flex-wrap: wrap; gap: 10px 26px; align-items: center; justify-content: space-between; color: var(--ink-soft); font-size: 0.93rem; }
@@ -470,22 +492,26 @@
         </div>
       </section>
 
-      <!-- ================= TARJETA DE CRIS ================= -->
+      <!-- ================= TARJETA DE CRISTIAN ================= -->
       <section id="tarjeta" aria-labelledby="tarjeta-h">
+        <div class="solo-bar">
+          <a class="btn btn-ghost" href="./">← Ver el menú completo de MenúListo</a>
+          <p style="margin-top:10px;color:var(--ink-soft);font-size:0.92rem;">Estás viendo solo la tarjeta. Abajo tienes aparte los diseños para distintos escenarios en el menú completo.</p>
+        </div>
         <div class="sec-head">
           <h2 id="tarjeta-h">Mi tarjeta digital</h2>
-          <p>Soy Cris, el dueño de MenúListo. Esta es mi tarjeta de presentación digital, el mismo servicio que ofrecemos para ti, tus socios o tus vendedores. Guárdala o escríbeme directo.</p>
+          <p>Soy Cristian Monsiviais, fundador de MenúListo. Esta es mi tarjeta de presentación digital, el mismo servicio que ofrecemos para ti, tus socios o tus vendedores. Guárdala o escríbeme directo.</p>
         </div>
         <div class="card-zone">
-          <div class="bizcard" role="group" aria-label="Tarjeta de presentación digital de Cris, dueño de MenúListo">
+          <div class="bizcard" role="group" aria-label="Tarjeta de presentación digital de Cristian Monsiviais, Fundador de MenúListo">
             <div class="bc-brand">
               <span class="brand-mark" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3h-3zM21 14v.01M14 21v.01M18 18h3v3h-3z"/></svg>
               </span>
               MenúListo
             </div>
-            <div class="bc-name">Cris</div>
-            <div class="bc-role">Dueño · MenúListo</div>
+            <div class="bc-name">Cristian Monsiviais</div>
+            <div class="bc-role">Fundador de MenúListo</div>
             <div class="bc-line">
               <span>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -502,7 +528,7 @@
             </div>
           </div>
           <div class="card-actions">
-            <a class="btn btn-wa" href="https://wa.me/528113009691?text=Hola%20Cris%2C%20vi%20tu%20tarjeta%20de%20Men%C3%BAListo%20y%20quiero%20informaci%C3%B3n%20de%20los%20men%C3%BAs%20digitales." target="_blank" rel="noopener">
+            <a class="btn btn-wa" href="https://wa.me/528113009691?text=Hola%20Cristian%2C%20vi%20tu%20tarjeta%20de%20Men%C3%BAListo%20y%20quiero%20informaci%C3%B3n%20de%20los%20men%C3%BAs%20digitales." target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.13a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.13-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.6.19 1.13.16 1.56.1.48-.07 1.47-.58 1.74-1.14.27-.56.27-1.04.19-1.14-.08-.1-.23-.16-.48-.28z"/></svg>
               Escríbeme por WhatsApp
             </a>
@@ -523,8 +549,48 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
               Facebook · @menulisto
             </a>
+            <a class="btn btn-teal" href="?solo=tarjeta#tarjeta">Ver solo esta tarjeta</a>
+            <a class="btn btn-outline" href="#disenos-tarjeta">Ver diseños para distintos escenarios</a>
           </div>
         </div>
+      </section>
+
+      <!-- ================= DISEÑOS PARA DISTINTOS ESCENARIOS ================= -->
+      <section id="disenos-tarjeta" aria-labelledby="disenos-h">
+        <div class="sec-head">
+          <h2 id="disenos-h">Diseños para distintos escenarios</h2>
+          <p>La misma tarjeta de Cristian Monsiviais, Fundador de MenúListo, adaptada a tres contextos. Así se vería tu tarjeta según tu tipo de negocio: tú eliges colores y estilo, los datos de contacto quedan iguales.</p>
+        </div>
+        <div class="designs-grid">
+          <article class="design-card dc-clasico">
+            <div>
+              <div class="dc-label">Escenario 1 · Clásico de marca</div>
+              <div class="dc-name">Cristian Monsiviais</div>
+              <div class="dc-role">Fundador de MenúListo</div>
+              <div class="dc-meta">81 1300 9691 · WhatsApp y llamada<br />@menulisto · Monterrey centro</div>
+            </div>
+            <p class="dc-note">Para todo negocio: restaurantes, cafeterías y tiendas. Es el diseño principal de MenúListo.</p>
+          </article>
+          <article class="design-card dc-dia">
+            <div>
+              <div class="dc-label">Escenario 2 · Claro / Día</div>
+              <div class="dc-name">Cristian Monsiviais</div>
+              <div class="dc-role">Fundador de MenúListo</div>
+              <div class="dc-meta">81 1300 9691 · WhatsApp y llamada<br />@menulisto · Monterrey centro</div>
+            </div>
+            <p class="dc-note">Para estéticas, barberías, consultorios y servicios de día: fondo claro, lectura rápida y tono amable.</p>
+          </article>
+          <article class="design-card dc-noche">
+            <div>
+              <div class="dc-label">Escenario 3 · Oscuro / Noche</div>
+              <div class="dc-name">Cristian Monsiviais</div>
+              <div class="dc-role">Fundador de MenúListo</div>
+              <div class="dc-meta">81 1300 9691 · WhatsApp y llamada<br />@menulisto · Monterrey centro</div>
+            </div>
+            <p class="dc-note">Para bares, antros y negocios nocturnos: fondo oscuro con acento ámbar, pensado para verse bien de noche.</p>
+          </article>
+        </div>
+        <p class="plans-note">¿Quieres uno de estos diseños para ti, un socio o un vendedor? <a href="https://wa.me/528113009691?text=Hola%20Cristian%2C%20quiero%20una%20tarjeta%20digital%20con%20uno%20de%20los%20dise%C3%B1os%20por%20escenario." target="_blank" rel="noopener">Pídelo por WhatsApp</a> — incluido en Estándar (1) y Premium (3), $100 por adicional, $150 en pago único, sin mensualidad.</p>
       </section>
     </main>
 
@@ -540,6 +606,13 @@
 
     <script>
       (function () {
+        // Vista de tarjeta sola: ?solo=tarjeta o #tarjeta-sola muestra únicamente la tarjeta
+        try {
+          var params = new URLSearchParams(window.location.search);
+          if (params.get("solo") === "tarjeta" || window.location.hash === "#tarjeta-sola") {
+            document.body.classList.add("solo-card");
+          }
+        } catch (e) {}
         var btn = document.getElementById("copy-phone");
         var feedback = document.getElementById("copy-feedback");
         var number = "+52 81 1300 9691";
