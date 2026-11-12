@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="description" content="MenúListo: menús y catálogos digitales con QR para negocios de Monterrey centro. Paquetes desde $500 MXN y prueba gratis de 15 días." />
+    <meta name="description" content="MenúListo: menús y catálogos digitales con QR para negocios de Monterrey centro. Paquetes desde $500 MXN." />
     <link rel="icon" href="data:," />
     <title>Menú de MenúListo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -265,6 +265,13 @@
       .dc-dia .dc-role { color: var(--teal); }
       .dc-noche { background: #171717; color: #f5efe2; }
       .dc-noche .dc-role { color: #f09a3e; }
+      .design-card .dc-btn {
+        display: inline-flex; align-items: center; justify-content: center;
+        margin-top: 16px; padding: 10px 18px; min-height: 44px;
+        border: 2px solid currentColor; border-radius: 10px;
+        color: inherit; font-weight: 700; text-decoration: none; align-self: flex-start;
+      }
+      .design-card .dc-btn:hover { opacity: 0.82; }
       @media (prefers-color-scheme: dark) { .dc-dia { background: #1d3d34; color: #f2ead9; border-color: #2c4a41; } }
       @media (max-width: 860px) { .designs-grid { grid-template-columns: 1fr; } }
 
@@ -314,7 +321,7 @@
           <div class="cta-row">
             <a class="btn btn-wa" href="https://wa.me/528113009691?text=Hola%20Men%C3%BAListo%2C%20quiero%20mi%20prueba%20gratis%20de%2015%20d%C3%ADas%20para%20el%20men%C3%BA%20digital%20de%20mi%20negocio." target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm0 18.13a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.13-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.6.19 1.13.16 1.56.1.48-.07 1.47-.58 1.74-1.14.27-.56.27-1.04.19-1.14-.08-.1-.23-.16-.48-.28z"/></svg>
-              Quiero mi prueba gratis
+              Quiero mi menú digital
             </a>
             <a class="btn btn-ghost" href="#paquetes">Ver paquetes y precios</a>
           </div>
@@ -331,7 +338,7 @@
       <section id="servicios" aria-labelledby="servicios-h">
         <div class="sec-head">
           <h2 id="servicios-h">Nuestros servicios</h2>
-          <p>Esto es lo que hacemos, presentado como lo que es: nuestro menú. Cada servicio se arma a la medida de tu negocio.</p>
+          <p>Lo que hacemos, en breve. El detalle de cada paquete está en la siguiente sección.</p>
         </div>
         <div class="menu-list">
           <article class="menu-item">
@@ -340,26 +347,7 @@
               <span class="dots" aria-hidden="true"></span>
               <span class="price"><small>desde</small>$500</span>
             </div>
-            <p>Tu menú o catálogo en una página pensada para celular, con enlace propio y código QR listo para imprimir en mesas, mostrador, vitrina o empaques.</p>
-            <span class="tag">Paquete Inicial</span>
-          </article>
-          <article class="menu-item">
-            <div class="menu-item-top">
-              <h3>Menú con tu marca</h3>
-              <span class="dots" aria-hidden="true"></span>
-              <span class="price"><small>en paquetes</small>Estándar +</span>
-            </div>
-            <p>Tus colores, tu logo, imagen de fondo, horarios por día y tus ítems con descripción y precio. Nada de plantillas genéricas: el menú se ve como tu negocio.</p>
-            <span class="tag">Colores · Logo · Fondo · Horarios · Ítems</span>
-          </article>
-          <article class="menu-item">
-            <div class="menu-item-top">
-              <h3>Cambios de precios y servicios</h3>
-              <span class="dots" aria-hidden="true"></span>
-              <span class="price"><small>incluido en</small>Estándar +</span>
-            </div>
-            <p>¿Subió un precio o agregaste un producto? Nos avisas y tu menú se actualiza sin reimprimir nada. El QR sigue siendo el mismo.</p>
-            <span class="tag">Actualizaciones del plan mensual</span>
+            <p>Tu menú o catálogo en una página para celular, con enlace propio y QR listo para imprimir.</p>
           </article>
           <article class="menu-item">
             <div class="menu-item-top">
@@ -367,17 +355,15 @@
               <span class="dots" aria-hidden="true"></span>
               <span class="price"><small>solo en</small>Premium</span>
             </div>
-            <p>Botones directos a tu WhatsApp y tus redes desde el menú, fotos de tus productos, espacio para promociones y conteo de escaneos de tu QR.</p>
-            <span class="tag tag-amber">Fotos · Promociones · Conteo de escaneos</span>
+            <p>Botones a tu WhatsApp y redes desde el menú, con fotos, promociones y conteo de escaneos.</p>
           </article>
           <article class="menu-item">
             <div class="menu-item-top">
               <h3>Tarjetas de presentación digitales</h3>
               <span class="dots" aria-hidden="true"></span>
-              <span class="price"><small>pago único</small>$150</span>
+              <span class="price"><small>para</small>tu equipo</span>
             </div>
-            <p>Una tarjeta digital para ti, tus socios o tus vendedores: nombre, puesto, negocio, WhatsApp, redes y correo, con los colores y el logo de tu marca. Viene incluida en los paquetes Estándar (1 tarjeta) y Premium (3 tarjetas), sin mensualidad; cada tarjeta adicional cuesta $100, y suelta, como pago único, $150. Abajo está la mía, así se ve.</p>
-            <span class="tag">Sin mensualidad · Dueños · Socios · Vendedores</span>
+            <p>Tarjetas para ti, tus socios o tus vendedores, con los colores y el logo de tu marca. Abajo está la mía.</p>
           </article>
         </div>
       </section>
@@ -386,7 +372,7 @@
       <section id="paquetes" aria-labelledby="paquetes-h">
         <div class="sec-head">
           <h2 id="paquetes-h">Paquetes</h2>
-          <p>Precios en pesos mexicanos. Los tres paquetes empiezan con la prueba gratis de 15 días.</p>
+          <p>Precios en pesos mexicanos.</p>
         </div>
         <div class="plans">
           <article class="plan">
@@ -411,7 +397,7 @@
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Tu marca: colores, logo e imagen de fondo</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Cambios de precios y servicios incluidos</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Enlaces a tu WhatsApp y redes sociales</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>1 tarjeta de presentación digital incluida, sin mensualidad</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>1 tarjeta de presentación digital incluida</li>
             </ul>
             <a class="btn btn-teal" href="https://wa.me/528113009691?text=Hola%20Men%C3%BAListo%2C%20me%20interesa%20el%20paquete%20Est%C3%A1ndar%20de%20%241%2C500%20%2B%20%24250%20al%20mes." target="_blank" rel="noopener">Pedir el Estándar</a>
           </article>
@@ -425,13 +411,12 @@
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Pedidos o citas por WhatsApp</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Promociones en tu menú</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Conteo de escaneos de tu QR</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>3 tarjetas de presentación digitales incluidas, sin mensualidad</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>3 tarjetas de presentación digitales incluidas</li>
             </ul>
             <a class="btn btn-ghost" href="https://wa.me/528113009691?text=Hola%20Men%C3%BAListo%2C%20me%20interesa%20el%20paquete%20Premium%20de%20%243%2C000%20%2B%20%24500%20al%20mes." target="_blank" rel="noopener">Pedir el Premium</a>
           </article>
         </div>
-        <p class="plans-note">Las tarjetas de presentación digitales no tienen mensualidad: cada tarjeta adicional cuesta $100, y si la quieres suelta, sin paquete, es un pago único de $150.</p>
-        <p class="plans-note">¿No sabes cuál te conviene? Empieza con la prueba gratis de 15 días y lo vemos con tu menú ya armado.</p>
+        <p class="plans-note">Las tarjetas no tienen mensualidad: cada tarjeta adicional cuesta $100, y suelta, sin paquete, es un pago único de $150.</p>
       </section>
 
       <!-- ================= CÓMO FUNCIONA ================= -->
@@ -457,8 +442,8 @@
           </div>
           <div class="step">
             <div class="num">4</div>
-            <h3>Prueba de 15 días</h3>
-            <p>Lo usas 15 días gratis. Si te sirve, eliges paquete; si no, sin compromiso.</p>
+            <h3>Lo compartes</h3>
+            <p>Lo pegas en tu negocio y lo mandas a tus clientes. Si un precio cambia, nos avisas y se actualiza.</p>
           </div>
         </div>
       </section>
@@ -500,7 +485,7 @@
         </div>
         <div class="sec-head">
           <h2 id="tarjeta-h">Mi tarjeta digital</h2>
-          <p>Soy Cristian Monsiviais, fundador de MenúListo. Esta es mi tarjeta de presentación digital, el mismo servicio que ofrecemos para ti, tus socios o tus vendedores. Guárdala o escríbeme directo.</p>
+          <p>Soy Cristian Monsiviais, fundador de MenúListo. Esta es mi tarjeta; así quedaría la tuya.</p>
         </div>
         <div class="card-zone">
           <div class="bizcard" role="group" aria-label="Tarjeta de presentación digital de Cristian Monsiviais, Fundador de MenúListo">
@@ -534,7 +519,7 @@
             </a>
             <a class="btn btn-outline" href="tel:+528113009691">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              Llamar al 81 1300 9691
+              Llamar
             </a>
             <button class="btn btn-outline" type="button" id="copy-phone">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
@@ -559,38 +544,43 @@
       <section id="disenos-tarjeta" aria-labelledby="disenos-h">
         <div class="sec-head">
           <h2 id="disenos-h">Diseños para distintos escenarios</h2>
-          <p>La misma tarjeta de Cristian Monsiviais, Fundador de MenúListo, adaptada a tres contextos. Así se vería tu tarjeta según tu tipo de negocio: tú eliges colores y estilo, los datos de contacto quedan iguales.</p>
+          <p>La tarjeta de arriba, en tres estilos. Tú eliges el que va con tu negocio.</p>
         </div>
         <div class="designs-grid">
           <article class="design-card dc-clasico">
             <div>
-              <div class="dc-label">Escenario 1 · Clásico de marca</div>
+              <div class="dc-label">Clásico de marca</div>
               <div class="dc-name">Cristian Monsiviais</div>
               <div class="dc-role">Fundador de MenúListo</div>
-              <div class="dc-meta">81 1300 9691 · WhatsApp y llamada<br />@menulisto · Monterrey centro</div>
             </div>
-            <p class="dc-note">Para todo negocio: restaurantes, cafeterías y tiendas. Es el diseño principal de MenúListo.</p>
+            <div>
+              <p class="dc-note">Para restaurantes, cafeterías y tiendas.</p>
+              <a class="dc-btn" href="https://wa.me/528113009691?text=Hola%20Cristian%2C%20quiero%20una%20tarjeta%20digital%20con%20el%20dise%C3%B1o%20cl%C3%A1sico%20de%20marca." target="_blank" rel="noopener">Quiero este diseño</a>
+            </div>
           </article>
           <article class="design-card dc-dia">
             <div>
-              <div class="dc-label">Escenario 2 · Claro / Día</div>
+              <div class="dc-label">Claro / Día</div>
               <div class="dc-name">Cristian Monsiviais</div>
               <div class="dc-role">Fundador de MenúListo</div>
-              <div class="dc-meta">81 1300 9691 · WhatsApp y llamada<br />@menulisto · Monterrey centro</div>
             </div>
-            <p class="dc-note">Para estéticas, barberías, consultorios y servicios de día: fondo claro, lectura rápida y tono amable.</p>
+            <div>
+              <p class="dc-note">Para estéticas, barberías y servicios de día.</p>
+              <a class="dc-btn" href="https://wa.me/528113009691?text=Hola%20Cristian%2C%20quiero%20una%20tarjeta%20digital%20con%20el%20dise%C3%B1o%20claro." target="_blank" rel="noopener">Quiero este diseño</a>
+            </div>
           </article>
           <article class="design-card dc-noche">
             <div>
-              <div class="dc-label">Escenario 3 · Oscuro / Noche</div>
+              <div class="dc-label">Oscuro / Noche</div>
               <div class="dc-name">Cristian Monsiviais</div>
               <div class="dc-role">Fundador de MenúListo</div>
-              <div class="dc-meta">81 1300 9691 · WhatsApp y llamada<br />@menulisto · Monterrey centro</div>
             </div>
-            <p class="dc-note">Para bares, antros y negocios nocturnos: fondo oscuro con acento ámbar, pensado para verse bien de noche.</p>
+            <div>
+              <p class="dc-note">Para bares y negocios nocturnos.</p>
+              <a class="dc-btn" href="https://wa.me/528113009691?text=Hola%20Cristian%2C%20quiero%20una%20tarjeta%20digital%20con%20el%20dise%C3%B1o%20oscuro." target="_blank" rel="noopener">Quiero este diseño</a>
+            </div>
           </article>
         </div>
-        <p class="plans-note">¿Quieres uno de estos diseños para ti, un socio o un vendedor? <a href="https://wa.me/528113009691?text=Hola%20Cristian%2C%20quiero%20una%20tarjeta%20digital%20con%20uno%20de%20los%20dise%C3%B1os%20por%20escenario." target="_blank" rel="noopener">Pídelo por WhatsApp</a> — incluido en Estándar (1) y Premium (3), $100 por adicional, $150 en pago único, sin mensualidad.</p>
       </section>
     </main>
 
@@ -598,7 +588,7 @@
       <div class="wrap foot">
         <span><strong>MenúListo</strong> · Menús y catálogos digitales con QR · Monterrey centro</span>
         <span>
-          <a href="https://wa.me/528113009691" target="_blank" rel="noopener">WhatsApp 81 1300 9691</a>
+          <a href="https://wa.me/528113009691" target="_blank" rel="noopener">WhatsApp</a>
           &nbsp;·&nbsp; @menulisto
         </span>
       </div>

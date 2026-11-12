@@ -123,10 +123,9 @@
   .palette{display:flex;align-items:center;gap:6px}
   .palette i{width:18px;height:18px;border-radius:50%;border:2px solid var(--surface);box-shadow:0 0 0 1px var(--line);display:block}
   .palette span{font-size:12px;color:var(--ink-3);font-weight:700;margin-left:4px}
-  .ex-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto}
+  .ex-actions{display:grid;grid-template-columns:1fr;gap:8px;margin-top:auto}
   .ex-actions a{text-decoration:none;border-radius:12px;padding:10px 12px;font-weight:800;font-size:13.5px;display:flex;align-items:center;justify-content:center;gap:7px;min-height:44px;text-align:center}
   .ex-actions a.primary{color:#fff}
-  .ex-actions a.ghost{background:var(--surface-2);border:1px solid var(--line);color:var(--ink)}
   .ex-actions svg{width:17px;height:17px}
 
   /* Themes per giro */
@@ -141,10 +140,6 @@
   .theme-unas .ex-top{background:#7C5C8A}
   .theme-unas .ex-logo{color:#7C5C8A}.theme-unas .person-avatar{background:#B18AC2}.theme-unas .ex-actions a.primary{background:#7C5C8A}
 
-  .note{margin-top:20px;background:var(--amber-soft);border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start}
-  .note p{margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-2)}
-  .note p b{color:var(--ink)}
-  .note svg{width:20px;height:20px;flex:none;margin-top:2px;color:var(--teal)}
   footer{margin-top:28px;text-align:center;color:var(--ink-3);font-size:13px;font-weight:600}
   .toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,16px);background:#13201D;color:#fff;padding:12px 16px;border-radius:999px;font-weight:800;font-size:14px;opacity:0;pointer-events:none;transition:.22s;z-index:20;box-shadow:0 12px 30px rgba(0,0,0,.25);max-width:calc(100vw - 32px);text-align:center}
   .toast.show{opacity:1;transform:translate(-50%,0)}
@@ -219,7 +214,6 @@
     <p class="section-label">Aparte · Para mostrar a clientes</p>
     <div class="scenarios-head">
       <h2>Diseños para distintos escenarios</h2>
-      <p>Cada giro se ve distinto. Estos son ejemplos de cómo quedaría la tarjeta digital según el tipo de negocio, con sus colores, su marca y el puesto de la persona: dueño, socio o vendedor.</p>
     </div>
 
     <div class="filters" role="group" aria-label="Filtrar por giro">
@@ -242,11 +236,10 @@
         </div>
         <div class="ex-body">
           <div class="person"><div class="person-avatar">MT</div><div><b>Mariana Torres</b><span>Dueña · Café Bruma</span></div></div>
-          <p class="ex-desc">Tono cálido y artesanal, pensado para una cafetería que comparte su tarjeta en mesa, en Instagram y en pedidos para llevar.</p>
+          <p class="ex-desc">Tono cálido y artesanal, para mesa, Instagram y pedidos para llevar.</p>
           <div class="palette"><i style="background:#6B3F22"></i><i style="background:#A67C52"></i><i style="background:#F3E6D3"></i><span>Marrón · Camel · Crema</span></div>
           <div class="ex-actions">
             <a class="primary" href="#" onclick="return demo(event)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg> WhatsApp</a>
-            <a class="ghost" href="#" onclick="return demo(event)">Ver menú</a>
           </div>
         </div>
       </article>
@@ -260,11 +253,10 @@
         </div>
         <div class="ex-body">
           <div class="person"><div class="person-avatar">JL</div><div><b>José Luis Herrera</b><span>Vendedor · Taquería El Faro</span></div></div>
-          <p class="ex-desc">Colores fuertes y contraste alto para que se lea de lejos, ideal para repartir en volantes con QR y en pedidos a domicilio.</p>
+          <p class="ex-desc">Contraste alto que se lee de lejos, para volantes con QR y pedidos a domicilio.</p>
           <div class="palette"><i style="background:#B91C1C"></i><i style="background:#D97706"></i><i style="background:#FFF7E6"></i><span>Rojo · Mostaza · Hueso</span></div>
           <div class="ex-actions">
             <a class="primary" href="#" onclick="return demo(event)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg> WhatsApp</a>
-            <a class="ghost" href="#" onclick="return demo(event)">Ver menú</a>
           </div>
         </div>
       </article>
@@ -278,11 +270,10 @@
         </div>
         <div class="ex-body">
           <div class="person"><div class="person-avatar">VL</div><div><b>Valeria Luna</b><span>Socia · Estética Luna</span></div></div>
-          <p class="ex-desc">Diseño suave y elegante para compartir por Instagram y WhatsApp cuando una clienta pide informes o quiere agendar cita.</p>
+          <p class="ex-desc">Suave y elegante, para informes y citas por Instagram y WhatsApp.</p>
           <div class="palette"><i style="background:#9D4E6B"></i><i style="background:#C97A95"></i><i style="background:#FBEAF0"></i><span>Rosa vino · Rosa · Blush</span></div>
           <div class="ex-actions">
-            <a class="primary" href="#" onclick="return demo(event)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg> Agendar cita</a>
-            <a class="ghost" href="#" onclick="return demo(event)">Ver servicios</a>
+            <a class="primary" href="#" onclick="return demo(event)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg> WhatsApp</a>
           </div>
         </div>
       </article>
@@ -296,11 +287,10 @@
         </div>
         <div class="ex-body">
           <div class="person"><div class="person-avatar">DR</div><div><b>Diego Ramírez</b><span>Dueño · Barbería Corte Fino</span></div></div>
-          <p class="ex-desc">Negro y dorado, sobrio y masculino. Funciona muy bien como tarjeta para repartir en el local y para cerrar citas por mensaje.</p>
+          <p class="ex-desc">Negro y dorado, sobrio, para repartir en el local y cerrar citas por mensaje.</p>
           <div class="palette"><i style="background:#111827"></i><i style="background:#E8C15A"></i><i style="background:#F3F4F6"></i><span>Negro · Dorado · Gris</span></div>
           <div class="ex-actions">
-            <a class="primary" href="#" onclick="return demo(event)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg> Reservar</a>
-            <a class="ghost" href="#" onclick="return demo(event)">Ver servicios</a>
+            <a class="primary" href="#" onclick="return demo(event)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg> WhatsApp</a>
           </div>
         </div>
       </article>
@@ -314,11 +304,10 @@
         </div>
         <div class="ex-body">
           <div class="person"><div class="person-avatar">FS</div><div><b>Fernanda Solís</b><span>Vendedora · Studio Nails by Fer</span></div></div>
-          <p class="ex-desc">Tono lila y delicado, pensado para una tarjeta que se comparte en historias, grupos de WhatsApp y recomendaciones entre clientas.</p>
+          <p class="ex-desc">Lila y delicado, para historias y recomendaciones entre clientas.</p>
           <div class="palette"><i style="background:#7C5C8A"></i><i style="background:#B18AC2"></i><i style="background:#F6EEFA"></i><span>Lila · Lavanda · Perla</span></div>
           <div class="ex-actions">
             <a class="primary" href="#" onclick="return demo(event)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Z"/></svg> WhatsApp</a>
-            <a class="ghost" href="#" onclick="return demo(event)">Ver catálogo</a>
           </div>
         </div>
       </article>
@@ -327,7 +316,7 @@
         <div class="ex-body" style="justify-content:center;text-align:left">
           <div style="font-size:28px">✦</div>
           <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-size:22px;margin:6px 0 8px;line-height:1.05">¿Otro giro? Se adapta.</h3>
-          <p class="ex-desc">Taquerías, cafeterías, estéticas, barberías, uñas, talleres, tiendas y más. Cada tarjeta usa los colores, el logo y el nombre de tu negocio.</p>
+          <p class="ex-desc">Cada tarjeta usa los colores, el logo y el nombre de tu negocio.</p>
           <p class="ex-desc"><b style="color:var(--ink)">Incluidas:</b> 1 en Estándar y 3 en Premium, sin mensualidad. Adicional $100 · Pago único $150 por tarjeta.</p>
           <div class="ex-actions" style="grid-template-columns:1fr">
             <a class="primary" style="background:var(--teal)" href="https://wa.me/528113009691?text=Hola%20Cristian%2C%20quiero%20una%20tarjeta%20digital%20para%20mi%20negocio" target="_blank" rel="noopener">Pedir mi tarjeta con Cristian</a>
@@ -336,14 +325,9 @@
       </div>
 
     </div>
-
-    <div class="note">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-      <p><b>Cómo usarlas:</b> la primera tarjeta es solo de Cristian, para compartirla sola. Los diseños de abajo son ejemplos por giro, para enseñarle a cada cliente cómo se vería la suya con su negocio.</p>
-    </div>
   </section>
 
-  <footer>MenúListo · Cristian Monsiviais · +52 81 1300 9691 · @menulisto</footer>
+  <footer>MenúListo · Cristian Monsiviais</footer>
 </div>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
