@@ -17,7 +17,7 @@
     --surface-2:#F9F7F2;
     --ink:#13201D;
     --ink-2:#4A5A56;
-    --ink-3:#7A8A86;
+    --ink-3:#5A6B66;
     --line:#DDD8CE;
     --teal:#0B6B5A;
     --teal-dark:#073F36;
@@ -45,6 +45,9 @@
   html{scroll-behavior:smooth}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-font-smoothing:antialiased}
   a{color:inherit}
+  :focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+  .main-card :focus-visible{outline-color:#fff}
+  @media (prefers-color-scheme: dark){:focus-visible{outline-color:#3EC9AE}}
   button, a.btn, .chip{min-height:44px}
   .wrap{max-width:1080px;margin:0 auto;padding:20px 18px 56px}
   @media(min-width:720px){.wrap{padding:32px 28px 72px}}
@@ -66,17 +69,23 @@
   @media(max-width:400px){.brand-logo{width:52px;height:52px;border-radius:13px}}
   .brand-row strong{font-family:"Bricolage Grotesque",sans-serif;font-size:19px;letter-spacing:-.01em;display:block;line-height:1}
   .brand-row span{font-size:12.5px;color:rgba(255,255,255,.72);font-weight:600}
-  .qr-badge{margin-left:auto;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:7px 10px;border-radius:999px;white-space:nowrap}
+  .qr-badge{margin-left:auto;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:7px 10px;border-radius:999px;white-space:nowrap}
   .avatar{width:76px;height:76px;border-radius:50%;background:#fff;color:var(--teal-dark);display:grid;place-items:center;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:26px;border:3px solid var(--amber);margin-bottom:16px}
   h1{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(34px,6vw,48px);line-height:.95;letter-spacing:-.03em;margin:0 0 8px;font-weight:800}
   .role{display:inline-flex;align-items:center;gap:8px;background:var(--amber);color:#1D1503;font-weight:800;font-size:14px;padding:8px 12px;border-radius:999px;margin-bottom:14px}
   .role i{width:7px;height:7px;border-radius:50%;background:#1D1503;display:block}
   .desc{color:rgba(255,255,255,.84);font-size:16px;line-height:1.55;margin:0 0 20px;max-width:46ch}
   .phone-box{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:14px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-  .phone-box small{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.62);font-weight:800;margin-bottom:2px}
+  .phone-box small{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.62);font-weight:800;margin-bottom:2px}
   .phone-box strong{font-size:20px;letter-spacing:.01em}
   .copy-btn{margin-left:auto;background:#fff;color:#073F36;border:0;border-radius:999px;padding:0 16px;font-weight:800;font-size:14px;cursor:pointer;min-height:40px}
   .copy-btn:active{transform:scale(.98)}
+
+  .qr-box{margin-top:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:14px 16px;display:flex;align-items:center;gap:14px}
+  .qr-box a{flex:none;line-height:0}
+  .qr-box img{width:84px;height:84px;border-radius:10px;background:#fff;padding:4px;display:block}
+  .qr-box b{display:block;font-size:15px}
+  .qr-box span{font-size:13px;color:rgba(255,255,255,.78);line-height:1.4;display:block;margin-top:2px}
 
   .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
   @media(min-width:720px){.actions{margin-top:0}}
@@ -92,7 +101,8 @@
   .action.full span{margin-left:auto}
 
   .main-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-  .main-meta span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:700;color:var(--ink-2)}
+  .main-meta span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:700;color:var(--ink-2);display:inline-flex;align-items:center;gap:6px}
+  .main-meta svg{width:16px;height:16px;flex:none}
   .main-meta span b{color:var(--ink)}
 
   /* ---------- Escenarios ---------- */
@@ -111,7 +121,7 @@
   .ex-card{border-radius:22px;overflow:hidden;background:var(--surface);border:1px solid var(--line);box-shadow:0 8px 24px rgba(19,32,29,.06);display:flex;flex-direction:column}
   .ex-top{padding:20px 20px 16px;color:#fff;position:relative;overflow:hidden}
   .ex-top::after{content:"";position:absolute;right:-28px;top:-28px;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.14)}
-  .ex-giro{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;opacity:.9;display:flex;justify-content:space-between;gap:8px;position:relative;z-index:1}
+  .ex-giro{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;opacity:.9;display:flex;justify-content:space-between;gap:8px;position:relative;z-index:1}
   .ex-giro em{font-style:normal;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.22);padding:4px 8px;border-radius:999px;letter-spacing:.02em;text-transform:none}
   .ex-logo{width:52px;height:52px;border-radius:14px;background:rgba(255,255,255,.96);display:grid;place-items:center;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:18px;margin:16px 0 12px;position:relative;z-index:1}
   .ex-biz{font-family:"Bricolage Grotesque",sans-serif;font-size:22px;line-height:1;letter-spacing:-.02em;margin:0;position:relative;z-index:1}
@@ -155,7 +165,7 @@
 <div class="wrap">
 
   <!-- TARJETA SOLA -->
-  <p class="section-label">Tarjeta digital · MenúListo</p>
+  <p class="section-label">Tarjeta de presentación digital · MenúListo</p>
 
   <article class="main-card" aria-label="Tarjeta de Cristian Monsiviais">
     <div class="main-card-inner">
@@ -203,14 +213,21 @@
             <b>Guardar contacto</b><span>Descargar vCard →</span>
           </button>
         </div>
+
+        <div class="qr-box">
+          <a href="https://criskuddy.github.io/menu-listo-/tarjeta-cristian/" target="_blank" rel="noopener" aria-label="Abrir esta tarjeta con el código QR">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQMAAADS6sNKAAAABlBMVEUaGhr///8SYIb4AAAB+klEQVR42u2bS26EQAxErfQBciSuzpH6AEgd8B+RzaySQsWCGVCveLKrXDSyPjp24Xqu5/r/tH6KH5vduY7vtfS0dv1nxzgvv+Szg+v/dv3Fdxjrk+8hJ9Dj4nuIX55UDbyuI19IvlqcClS2ed2zf8Oo6j27JF9ovtqVHW27R77v4WtFbCcXYfJ9if5aQxZTXVNiZ079Beab/tm09nmif0bmezsKqNbvY57i84Tsz9aLVWabdfbq1iGYfNH52lRUnmub2b016WB/Bu3PGmOkQ04lNuu8HC39MzDfnmpcuFcT4ZWVTL649Wsx83j6qzkyuKT+wtavpP5uJri9Zxt4zkfI89ENYzde4rjdZPF5QvLNwKoEN2o6gi32Z3C+5ZpDeiXySfJF1181VNKrtganKmzyhc033D/3qs13/q1J83ni8dXf4SKcQ3ANSbVTh3xB+VbB1izU4o5Fvuj+qiuxi/CUlm9w/gWu39urhboct+0c1F9c/5ypc+vFTjqcNPNndP+cLwRdk2ff3cH3v8j6myFlq9q9PHXtyeLzBJ2PwkT/wjziStYvbH9etc153fPJ2OTO+gXm27xyzkf1OQP19yV8M+loIXRskiXfd9Tvlhs2smdX0kG+0Ppb0htfEkawxf2xb/DPuRO65c/lr+if0edffv/O9VwPtf4HDLuqoBwDPS0AAAAASUVORK5CYII=" alt="Código QR de la tarjeta de Cristian Monsiviais" width="370" height="370">
+          </a>
+          <div><b>Escanea el QR</b><span>Abre esta tarjeta en otro celular</span></div>
+        </div>
       </div>
     </div>
   </article>
 
   <div class="main-meta" aria-label="Datos de la tarjeta">
-    <span>🌐 <b>Servicio en línea</b> · Para cualquier ciudad</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10Z"/></svg> <b>Servicio en línea</b> · Para cualquier ciudad</span>
     <span>Prueba gratis <b>15 días</b></span>
-    <span>Menús · Catálogos · <b>Tarjetas digitales</b></span>
+    <span>Menús · Catálogos · <b>Tarjetas de presentación digitales</b></span>
   </div>
 
   <!-- DISEÑOS PARA DISTINTOS ESCENARIOS -->
