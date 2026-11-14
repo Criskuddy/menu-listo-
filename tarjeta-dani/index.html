@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Tarjeta de presentación digital de Dani (MenúListo)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root{
+        --bg:#EFEEE7;
+        --ink:#14201B;
+        --muted:#5A6B62;
+        --green-950:#082A1F;
+        --green-900:#0B3527;
+        --green-800:#114433;
+        --green-line:rgba(255,255,255,.16);
+        --gold:#E5A83B;
+        --gold-ink:#3A2A05;
+        --wa:#22B45E;
+        --fb:#1B74E4;
+        --navy:#101828;
+        --card-bg:#FFFFFF;
+        --chip-border:#DCD9CE;
+      }
+      @media (prefers-color-scheme: dark){
+        :root{
+          --bg:#101613;
+          --ink:#EDF2EE;
+          --muted:#9DB1A6;
+          --card-bg:#1A211D;
+          --chip-border:#2E3A33;
+        }
+      }
+      *{ box-sizing:border-box; }
+      html{ -webkit-text-size-adjust:100%; }
+      body{
+        margin:0;
+        background:var(--bg);
+        color:var(--ink);
+        font-family:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+        line-height:1.5;
+      }
+      a{ color:inherit; }
+      button, a.btn, .tile, .chip-btn{ min-height:44px; }
+      .wrap{ max-width:1060px; margin:0 auto; padding:28px 20px 40px; }
+
+      .eyebrow{
+        display:flex; align-items:center; gap:14px;
+        color:#1C6B4A; font-size:12px; font-weight:700;
+        letter-spacing:.14em; text-transform:uppercase; margin:6px 2px 14px;
+      }
+      @media (prefers-color-scheme: dark){ .eyebrow{ color:#5FC493; } }
+      .eyebrow::after{ content:""; flex:1; height:1px; background:var(--chip-border); }
+
+      /* ---------- Tarjeta principal ---------- */
+      .card{
+        background:linear-gradient(135deg,var(--green-800) 0%,var(--green-900) 45%,var(--green-950) 100%);
+        color:#fff; border-radius:28px; padding:38px;
+        box-shadow:0 24px 48px rgba(8,42,31,.28);
+      }
+      .card-grid{ display:grid; grid-template-columns:1.08fr .92fr; gap:36px; }
+      .brand-row{ display:flex; align-items:flex-start; justify-content:space-between; gap:16px; }
+      .brand{ display:flex; align-items:center; gap:12px; }
+      .logo-box{
+        width:56px; height:56px; border-radius:14px; background:#fff;
+        display:flex; align-items:center; justify-content:center; flex:none;
+      }
+      .logo-box svg{ width:38px; height:38px; }
+      .brand-name{ font-size:19px; font-weight:700; line-height:1.15; }
+      .brand-sub{ font-size:12.5px; color:rgba(255,255,255,.72); }
+      .con-qr{
+        border:1px solid var(--green-line); color:rgba(255,255,255,.85);
+        font-size:11px; font-weight:600; letter-spacing:.12em;
+        padding:7px 13px; border-radius:999px; white-space:nowrap; margin-top:4px;
+      }
+      .avatar{
+        width:74px; height:74px; border-radius:50%; background:#fff; color:var(--green-900);
+        border:3px solid var(--gold);
+        display:flex; align-items:center; justify-content:center;
+        font-size:27px; font-weight:800; margin:30px 0 18px;
+      }
+      h1{ font-size:52px; line-height:1.04; font-weight:800; margin:0 0 16px; letter-spacing:-.01em; }
+      .role{
+        display:inline-flex; align-items:center; gap:8px;
+        background:var(--gold); color:var(--gold-ink);
+        font-size:13.5px; font-weight:700; padding:8px 16px; border-radius:999px;
+      }
+      .role .dot{ width:7px; height:7px; border-radius:50%; background:var(--gold-ink); }
+      .desc{ color:rgba(255,255,255,.82); font-size:15px; margin:20px 0 24px; max-width:46ch; }
+      .info-box{
+        border:1px solid var(--green-line); border-radius:16px;
+        padding:16px 18px; display:flex; align-items:center; justify-content:space-between; gap:14px;
+        background:rgba(255,255,255,.04);
+      }
+      .info-label{ font-size:11px; font-weight:600; letter-spacing:.13em; color:rgba(255,255,255,.6); text-transform:uppercase; }
+      .info-value{ font-size:19px; font-weight:700; margin-top:2px; }
+      .copy-btn{
+        background:#fff; color:var(--green-900); border:0; cursor:pointer;
+        font:inherit; font-size:13.5px; font-weight:600;
+        padding:10px 18px; border-radius:999px; white-space:nowrap;
+      }
+      .copy-btn:active{ transform:scale(.97); }
+      .pending-box{
+        margin-top:12px; border:1.5px dashed rgba(255,255,255,.35); border-radius:16px;
+        padding:14px 18px; display:flex; align-items:center; gap:14px;
+        background:rgba(255,255,255,.03);
+      }
+      .pending-ico{
+        width:40px; height:40px; flex:none; border-radius:50%;
+        border:1.5px dashed rgba(255,255,255,.45);
+        display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.75);
+      }
+      .pending-value{ font-size:16.5px; font-weight:700; color:#F3C96B; }
+      .pending-note{ font-size:12.5px; color:rgba(255,255,255,.65); }
+
+      .actions{ display:flex; flex-direction:column; gap:12px; }
+      .tile-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+      .tile{
+        border-radius:16px; padding:16px; text-decoration:none; color:#fff;
+        display:flex; flex-direction:column; gap:3px; min-height:104px;
+      }
+      .tile svg{ width:22px; height:22px; margin-bottom:6px; }
+      .tile .t-title{ font-size:15.5px; font-weight:700; }
+      .tile .t-sub{ font-size:12.5px; opacity:.85; line-height:1.4; }
+      .tile-wa{ background:var(--wa); }
+      .tile-call{ background:#fff; color:var(--ink); }
+      .tile-ig{ background:var(--navy); }
+      .tile-fb{ background:var(--fb); }
+      .save-btn{
+        display:flex; align-items:center; justify-content:space-between; gap:12px;
+        border:1px solid var(--green-line); border-radius:16px; background:rgba(255,255,255,.05);
+        color:#fff; font:inherit; font-size:15px; font-weight:700; cursor:pointer;
+        padding:15px 18px; width:100%; text-align:left;
+      }
+      .save-btn .s-left{ display:flex; align-items:center; gap:11px; }
+      .save-btn svg{ width:21px; height:21px; }
+      .save-btn .s-right{ font-size:12.5px; font-weight:500; color:rgba(255,255,255,.7); }
+      .save-btn:active{ transform:scale(.99); }
+      .menu-btn{
+        display:flex; align-items:center; justify-content:space-between; gap:12px;
+        background:var(--gold); color:var(--gold-ink); border-radius:16px;
+        font-size:15px; font-weight:700; text-decoration:none; padding:15px 18px;
+      }
+      .menu-btn .s-left{ display:flex; align-items:center; gap:11px; }
+      .menu-btn svg{ width:21px; height:21px; }
+      .menu-btn .s-right{ font-size:12.5px; font-weight:600; opacity:.75; }
+      .qr-box{
+        border:1px solid var(--green-line); border-radius:16px; background:rgba(255,255,255,.05);
+        padding:16px 18px; display:flex; align-items:center; gap:16px;
+      }
+      .qr-box img{ width:76px; height:76px; border-radius:10px; background:#fff; padding:4px; flex:none; }
+      .qr-title{ font-size:14.5px; font-weight:700; }
+      .qr-sub{ font-size:12.5px; color:rgba(255,255,255,.7); line-height:1.4; }
+
+      /* ---------- Chips ---------- */
+      .chips{ display:flex; flex-wrap:wrap; gap:10px; margin:20px 0 8px; }
+      .chip{
+        background:var(--card-bg); border:1px solid var(--chip-border); border-radius:999px;
+        padding:9px 16px; font-size:13px; display:inline-flex; align-items:center; gap:7px;
+      }
+      .chip svg{ width:15px; height:15px; color:#1C6B4A; }
+      @media (prefers-color-scheme: dark){ .chip svg{ color:#5FC493; } }
+      .chip b{ font-weight:700; }
+      .chip span{ color:var(--muted); }
+
+      /* ---------- Ejemplos ---------- */
+      .examples-head{ margin-top:38px; }
+      h2{ font-size:34px; font-weight:800; margin:0 0 18px; letter-spacing:-.01em; }
+      .filters{ display:flex; flex-wrap:wrap; gap:9px; margin-bottom:22px; }
+      .chip-btn{
+        font:inherit; font-size:13.5px; font-weight:600; cursor:pointer;
+        background:var(--card-bg); color:var(--ink);
+        border:1px solid var(--chip-border); border-radius:999px; padding:9px 18px;
+      }
+      .chip-btn.active{ background:#101613; color:#fff; border-color:#101613; }
+      @media (prefers-color-scheme: dark){ .chip-btn.active{ background:#EDF2EE; color:#101613; border-color:#EDF2EE; } }
+      .grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+      .ex-card{
+        background:var(--card-bg); border-radius:20px; overflow:hidden;
+        box-shadow:0 8px 22px rgba(20,32,27,.08); display:flex; flex-direction:column;
+      }
+      .ex-top{ padding:20px 20px 22px; color:#fff; position:relative; overflow:hidden; }
+      .ex-top::after{
+        content:""; position:absolute; right:-34px; top:-40px; width:130px; height:130px;
+        border-radius:50%; background:rgba(255,255,255,.14);
+      }
+      .ex-cat{ font-size:11px; font-weight:700; letter-spacing:.13em; text-transform:uppercase; display:flex; justify-content:space-between; align-items:center; }
+      .ex-badge{ border:1px solid rgba(255,255,255,.45); border-radius:999px; padding:3px 10px; font-size:10.5px; letter-spacing:.04em; text-transform:none; font-weight:600; }
+      .ex-initials{
+        width:50px; height:50px; border-radius:13px; background:#fff;
+        display:flex; align-items:center; justify-content:center;
+        font-weight:800; font-size:16px; margin:16px 0 12px;
+      }
+      .ex-name{ font-size:20px; font-weight:700; line-height:1.2; }
+      .ex-type{ font-size:13px; opacity:.85; }
+      .ex-body{ padding:18px 20px 20px; display:flex; flex-direction:column; gap:12px; flex:1; }
+      .ex-person{ display:flex; align-items:center; gap:12px; }
+      .ex-avatar{ width:46px; height:46px; border-radius:50%; color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; flex:none; }
+      .ex-pname{ font-size:14.5px; font-weight:700; line-height:1.25; }
+      .ex-prole{ font-size:12.5px; color:var(--muted); }
+      .ex-desc{ font-size:13.5px; color:var(--muted); margin:0; }
+      .ex-colors{ display:flex; align-items:center; gap:6px; font-size:12px; color:var(--muted); }
+      .ex-colors .sw{ width:14px; height:14px; border-radius:50%; border:1px solid rgba(0,0,0,.12); }
+      .ex-brand{ display:flex; align-items:center; gap:8px; font-size:12.5px; font-weight:600; color:var(--muted); }
+      .ex-brand svg{ width:20px; height:20px; }
+      .ex-wa{
+        margin-top:auto; display:flex; align-items:center; justify-content:center; gap:8px;
+        color:#fff; text-decoration:none; font-size:14px; font-weight:600;
+        border-radius:12px; padding:12px;
+      }
+      .ex-wa svg{ width:17px; height:17px; }
+      .ex-cta{ padding:24px 22px; display:flex; flex-direction:column; gap:12px; }
+      .ex-cta .star{ font-size:20px; }
+      .ex-cta h3{ font-size:20px; margin:0; font-weight:700; }
+      .ex-cta p{ font-size:13.5px; color:var(--muted); margin:0; }
+      .ex-cta .cta-btn{
+        margin-top:auto; background:var(--green-900); color:#fff; text-align:center;
+        text-decoration:none; font-weight:600; font-size:14px; border-radius:12px; padding:13px;
+      }
+      footer{ text-align:center; color:var(--muted); font-size:13px; margin-top:34px; }
+
+      @media (max-width:900px){
+        .grid{ grid-template-columns:repeat(2,1fr); }
+      }
+      @media (max-width:680px){
+        .wrap{ padding:18px 14px 32px; }
+        .card{ padding:26px 20px; border-radius:22px; }
+        .card-grid{ grid-template-columns:1fr; gap:26px; }
+        h1{ font-size:42px; }
+        h2{ font-size:27px; }
+        .grid{ grid-template-columns:1fr; }
+        .info-box{ flex-wrap:wrap; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <p class="eyebrow">Tarjeta de presentación digital · MenúListo</p>
+
+      <section class="card" aria-label="Tarjeta de presentación digital de Dani">
+        <div class="card-grid">
+          <div>
+            <div class="brand-row">
+              <div class="brand">
+                <span class="logo-box" aria-hidden="true">
+                  <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="4" width="17" height="17" rx="3" fill="#0B3527"/><rect x="9" y="9" width="7" height="7" fill="#fff"/><rect x="27" y="4" width="17" height="17" rx="3" fill="#0B3527"/><rect x="32" y="9" width="7" height="7" fill="#fff"/><rect x="4" y="27" width="17" height="17" rx="3" fill="#0B3527"/><rect x="9" y="32" width="7" height="7" fill="#fff"/><rect x="27" y="27" width="7" height="7" fill="#E5A83B"/><rect x="37" y="27" width="7" height="7" fill="#0B3527"/><rect x="27" y="37" width="7" height="7" fill="#0B3527"/><rect x="37" y="37" width="7" height="7" fill="#E5A83B"/></svg>
+                </span>
+                <span>
+                  <span class="brand-name">MenúListo</span><br />
+                  <span class="brand-sub">Menús digitales con QR</span>
+                </span>
+              </div>
+              <span class="con-qr">CON QR</span>
+            </div>
+
+            <div class="avatar" aria-hidden="true">D</div>
+            <h1>Dani</h1>
+            <span class="role"><span class="dot"></span>Vendedora de MenúListo</span>
+            <p class="desc">Ayudo a negocios de cualquier ciudad a tener su menú o catálogo digital con QR, 100% en línea: fácil de compartir, fácil de actualizar y listo para recibir pedidos y mensajes.</p>
+
+            <div class="info-box">
+              <div>
+                <div class="info-label">WhatsApp y llamadas · MenúListo</div>
+                <div class="info-value">+52 81 1300 9691</div>
+              </div>
+              <button class="copy-btn" id="copyBtn" type="button">Copiar número</button>
+            </div>
+
+            <div class="pending-box">
+              <span class="pending-ico" aria-hidden="true">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              </span>
+              <div>
+                <div class="info-label">WhatsApp personal de Dani</div>
+                <div class="pending-value">Por confirmar</div>
+                <div class="pending-note">Este número se agregará en cuanto Dani lo comparta.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="actions">
+            <div class="tile-grid">
+              <a class="tile tile-wa" href="https://wa.me/528113009691?text=Hola%2C%20vi%20la%20tarjeta%20de%20Dani%20de%20Men%C3%BAListo%20y%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.4 1.8 2.2 1.2 1.1 2.3 1.5 2.6 1.6.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2.1 1c.3.2.5.3.6.4 0 .1 0 .7-.2 1.2z"/></svg>
+                <span class="t-title">WhatsApp</span>
+                <span class="t-sub">Respuesta directa con MenúListo</span>
+              </a>
+              <a class="tile tile-call" href="tel:+528113009691">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>
+                <span class="t-title">Llamar</span>
+                <span class="t-sub">81 1300 9691</span>
+              </a>
+              <a class="tile tile-ig" href="https://instagram.com/menulisto" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+                <span class="t-title">Instagram</span>
+                <span class="t-sub">@menulisto</span>
+              </a>
+              <a class="tile tile-fb" href="https://facebook.com/menulisto" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8.5V6.8c0-.8.5-1 .9-1H17V2.5h-2.9C11.2 2.5 10 4.4 10 6.5v2H7.5V12H10v9.5h4V12h2.7l.4-3.5H14z"/></svg>
+                <span class="t-title">Facebook</span>
+                <span class="t-sub">@menulisto</span>
+              </a>
+            </div>
+
+            <button class="save-btn" id="saveBtn" type="button">
+              <span class="s-left">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>
+                Guardar contacto
+              </span>
+              <span class="s-right">Descargar vCard →</span>
+            </button>
+
+            <a class="menu-btn" href="https://criskuddy.github.io/menu-listo-/menulisto/" target="_blank" rel="noopener">
+              <span class="s-left">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>
+                Ver el menú de MenúListo
+              </span>
+              <span class="s-right">Abrir →</span>
+            </a>
+
+            <div class="qr-box">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAzQAAAM0AQAAAABFCVraAAAEZUlEQVR4nO3dS46dOhAA0PJT5twdZP/Lyg5gBc7gGvwBuiO9pCXcx4Pogg1H8qQrdlFOOb6ibf99CRPB4XA4HA6Hw+FwOBwOh8PhcDgcDofD4XA4HA7n650f9Wca+5a16cj34/be2xfEfPPG4XA4HM63cZbctHJvS2m4jIiIMmgtj33wggvnHzYOh8PhcDh/30nv9jouf+YcsZV7pWMPCMrl1j/RveDO+VeNw+FwOBzO/28/Ph8SKZZ83mRY1ptdhcs227xxOBwOhzOz8yfxQY6tBAFtLLClyLG99iGftNnmjcPhcDicmZ0xPrj6Q98uHdScxWXdw4VlfV/eviDmmzcOh8PhcL6Ns6WmtR1Lzm2Gwavt+KMXzD1vHA6Hw+FM5jTrB9f/899SlL2Ec8tH7wcveLfZ5o3D4XA4nJmdrv5B3TKIiOgzEGtHLqkHKeJIXIx+SFf6ICLmmzcOh8PhcL6Xs5S6Bjn/On2omPPa7y9sKZXBazskIvpx32DeOBwOh8OZx4mhntFVyaMaMwyP1SHtY8vxqtrW2eaNw+FwOJyZnZv8g9uEgzi2G5b1/X1jHvMPtquKCLPNG4fD4XA4Mzvj+kG91y4ddJftFkQ+3SsvWCPacsvWDzgcDofDeZBzWf+gFDyoaYh7Rz4WFtI4rrl8XTizzRuHw+FwODM74/5C6n/V0sqpL4207yW8miF7paRTMeaYb944HA6Hw5nZ6fYXzgcx1stT3uF6vGA9XnZzkqP9BQ6Hw+FwHuVEvmxrxNVXC+WJ9fgn9+kI9bHc5i6IDzgcDofDeZTTf4XY/41f72KB3Ccz1t6IGL50FB9wOBwOh/M853x+Y004ON8rHy8ua0R7PlOOOLIS5R9wOBwOh/N453J/oXSsx6Dl+vvGtvfjN1s/4HA4HA7nQc4YHwzVEE+FDIZx3bbEkLMoPuBwOBwO56HOeD5T+RVtXYPclFPcXlEObjqf2pjeOw0RUXYkmkOaZps3DofD4XBmdi7rI+WjrkFpe4ZBLr/aoxvLuL2j1keSf8DhcDgczkOdMT7oUg77E5z3JYE2A3F7NcWUookoxjbbvHE4HA6HM7Mz1kc6HdO4XgxeI04HM8TpMfkHHA6Hw+E81Lmpj3Sbhpj7WGC5O8dp7xUfcDgcDofzPKfLTxxaPWbhPKQ9y3nPVOwSEuUfcDgcDofzWOe8v5D7hYDlKIeQj1/rxXvq+sF+af2Aw+FwOJxJnPRur/5uFySk9LPfblhyjtjKk2Xcr9QvR8w+bxwOh8PhzOSc6ysPrZY+eF++mtIH9aTn9kuGWni5abPNG4fD4XA4MzufxgfvDxrX5k57uMIePaSmY4go3m22eeNwOBwOZ2bnsj5Se/kuedTWShyWCcoiQlcJYYgoYr5543A4HA5nZqeLD7bTvsBwkuN+iOOriRRqHaV99+F1sYgw27xxOBwOhzOzk24rHv7Vts02bxwOh8PhcDgcDofD4XA4HA6Hw+FwOBwOh8PhcGr7DSiaW3ZPmhBMAAAAAElFTkSuQmCC" alt="Código QR que abre esta tarjeta de presentación de Dani" width="76" height="76" />
+              <div>
+                <div class="qr-title">Escanea el QR</div>
+                <div class="qr-sub">Abre esta tarjeta de Dani en otro celular</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="chips">
+        <span class="chip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.6 3.9 5.9 3.9 9.5s-1.3 6.9-3.9 9.5c-2.6-2.6-3.9-5.9-3.9-9.5S9.4 5.1 12 2.5z"/></svg>
+          <span><b>Servicio en línea</b> · Para cualquier ciudad</span>
+        </span>
+        <span class="chip"><span>Prueba gratis <b>15 días</b></span></span>
+        <span class="chip"><span>Menús · Catálogos · <b>Tarjetas de presentación digitales</b></span></span>
+      </div>
+
+      <section class="examples-head">
+        <p class="eyebrow">Aparte · Para mostrar a clientes</p>
+        <h2>Diseños para distintos escenarios</h2>
+        <div class="filters" role="group" aria-label="Filtrar ejemplos por giro">
+          <button class="chip-btn active" type="button" data-filter="todos">Todos</button>
+          <button class="chip-btn" type="button" data-filter="cafeteria">Cafetería</button>
+          <button class="chip-btn" type="button" data-filter="taqueria">Taquería</button>
+          <button class="chip-btn" type="button" data-filter="estetica">Estética</button>
+          <button class="chip-btn" type="button" data-filter="barberia">Barbería</button>
+          <button class="chip-btn" type="button" data-filter="unas">Uñas</button>
+        </div>
+
+        <div class="grid" id="exGrid">
+          <article class="ex-card" data-cat="cafeteria">
+            <div class="ex-top" style="background:#6B4226">
+              <div class="ex-cat"><span>Cafetería</span><span class="ex-badge">Ejemplo</span></div>
+              <div class="ex-initials" style="color:#6B4226">CB</div>
+              <div class="ex-name">Café Bruma</div>
+              <div class="ex-type">Cafetería</div>
+            </div>
+            <div class="ex-body">
+              <div class="ex-person">
+                <span class="ex-avatar" style="background:#B08954">MT</span>
+                <span><span class="ex-pname">Mariana Torres</span><br /><span class="ex-prole">Dueña · Café Bruma</span></span>
+              </div>
+              <p class="ex-desc">Tono cálido y artesanal, para mesa, Instagram y pedidos para llevar.</p>
+              <div class="ex-colors"><span class="sw" style="background:#6B4226"></span><span class="sw" style="background:#B08954"></span><span class="sw" style="background:#F1E4CE"></span> Marrón · Camel · Crema</div>
+              <div class="ex-brand">
+                <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="4" width="17" height="17" rx="3" fill="#0B3527"/><rect x="27" y="4" width="17" height="17" rx="3" fill="#0B3527"/><rect x="4" y="27" width="17" height="17" rx="3" fill="#0B3527"/><rect x="27" y="27" width="7" height="7" fill="#E5A83B"/><rect x="37" y="37" width="7" height="7" fill="#0B3527"/></svg>
+                MenúListo
+              </div>
+              <a class="ex-wa" style="background:#6B4226" href="https://wa.me/528113009691?text=Hola%2C%20quiero%20una%20tarjeta%20como%20la%20de%20Caf%C3%A9%20Bruma" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="ex-card" data-cat="taqueria">
+            <div class="ex-top" style="background:#C0161C">
+              <div class="ex-cat"><span>Taquería</span><span class="ex-badge">Ejemplo</span></div>
+              <div class="ex-initials" style="color:#C0161C">EF</div>
+              <div class="ex-name">Taquería El Faro</div>
+              <div class="ex-type">Tacos y antojitos</div>
+            </div>
+            <div class="ex-body">
+              <div class="ex-person">
+                <span class="ex-avatar" style="background:#E07B1F">JL</span>
+                <span><span class="ex-pname">José Luis Herrera</span><br /><span class="ex-prole">Vendedor · Taquería El Faro</span></span>
+              </div>
+              <p class="ex-desc">Contraste alto que se lee de lejos, para volantes con QR y pedidos a domicilio.</p>
+              <div class="ex-colors"><span class="sw" style="background:#C0161C"></span><span class="sw" style="background:#E07B1F"></span><span class="sw" style="background:#F5EDDC"></span> Rojo · Mostaza · Hueso</div>
+              <div class="ex-brand">
+                <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="4" width="17" height="17" rx="3" fill="#0B3527"/><rect x="27" y="4" width="17" height="17" rx="3" fill="#0B3527"/><rect x="4" y="27" width="17" height="17" rx="3" fill="#0B3527"/><rect x="27" y="27" width="7" height="7" fill="#E5A83B"/><rect x="37" y="37" width="7" height="7" fill="#0B3527"/></svg>
+                MenúListo
+              </div>
+              <a class="ex-wa" style="background:#C0161C" href="https://wa.me/528113009691?text=Hola%2C%20quiero%20una%20tarjeta%20como%20la%20de%20Taquer%C3%ADa%20El%20Faro" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="ex-card" data-cat="estetica">
+            <div class="ex-top" style="background:#9C4A68">
+              <div class="ex-cat"><span>Estética</span><span class="ex-badge">Ejemplo</span></div>
+              <div class="ex-initials" style="color:#9C4A68">EL</div>
+              <div class="ex-name">Estética Luna</div>
+              <div class="ex-type">Belleza y estilismo</div>
+            </div>
+            <div class="ex-body">
+              <div class="ex-person">
+                <span class="ex-avatar" style="background:#C47E97">VL</span>
+                <span><span class="ex-pname">Valeria Luna</span><br /><span class="ex-prole">Socia · Estética Luna</span></span>
+              </div>
+              <p class="ex-desc">Suave y elegante, para informes y citas por Instagram y WhatsApp.</p>
+              <div class="ex-colors"><span class="sw" style="background:#9C4A68"></span><span class="sw" style="background:#C47E97"></span><span class="sw" style="background:#F6DFE6"></span> Rosa vino · Rosa · Blush</div>
+              <div class="ex-brand">
+                <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="4" width="17" height="17" rx="3" fill="#0B3527"/><rect x="27" y="4" width="17" height="17" rx="3" fill="#0B3527"/><rect x="4" y="27" width="17" height="17" rx="3" fill="#0B3527"/><rect x="27" y="27" width="7" height="7" fill="#E5A83B"/><rect x="37" y="37" width="7" height="7" fill="#0B3527"/></svg>
+                MenúListo
+              </div>
+              <a class="ex-wa" style="background:#9C4A68" href="https://wa.me/528113009691?text=Hola%2C%20quiero%20una%20tarjeta%20como%20la%20de%20Est%C3%A9tica%20Luna" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="ex-card" data-cat="barberia">
+            <div class="ex-top" style="background:#0E1622">
+              <div class="ex-cat"><span>Barbería</span><span class="ex-badge">Ejemplo</span></div>
+              <div class="ex-initials" style="background:#E9B949;color:#0E1622">CF</div>
+              <div class="ex-name">Barbería Corte Fino</div>
+              <div class="ex-type">Barbería</div>
+            </div>
+            <div class="ex-body">
+              <div class="ex-person">
+                <span class="ex-avatar" style="background:#2A3646">DR</span>
+                <span><span class="ex-pname">Diego Ramírez</span><br /><span class="ex-prole">Dueño · Barbería Corte Fino</span></span>
+              </div>
+              <p class="ex-desc">Negro y dorado, sobrio, para repartir en el local y cerrar citas por mensaje.</p>
+              <div class="ex-colors"><span class="sw" style="background:#0E1622"></span><span class="sw" style="background:#E9B949"></span><span class="sw" style="background:#E8E8E8"></span> Negro · Dorado · Gris</div>
+              <div class="ex-brand">
+                <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="4" width="17" height="17" rx="3" fill="#0B3527"/><rect x="27" y="4" width="17" height="17" rx="3" fill="#0B3527"/><rect x="4" y="27" width="17" height="17" rx="3" fill="#0B3527"/><rect x="27" y="27" width="7" height="7" fill="#E5A83B"/><rect x="37" y="37" width="7" height="7" fill="#0B3527"/></svg>
+                MenúListo
+              </div>
+              <a class="ex-wa" style="background:#0E1622" href="https://wa.me/528113009691?text=Hola%2C%20quiero%20una%20tarjeta%20como%20la%20de%20Barber%C3%ADa%20Corte%20Fino" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="ex-card" data-cat="unas">
+            <div class="ex-top" style="background:#7A5C8F">
+              <div class="ex-cat"><span>Negocio de uñas</span><span class="ex-badge">Ejemplo</span></div>
+              <div class="ex-initials" style="color:#7A5C8F">SN</div>
+              <div class="ex-name">Studio Nails by Fer</div>
+              <div class="ex-type">Uñas y nail art</div>
+            </div>
+            <div class="ex-body">
+              <div class="ex-person">
+                <span class="ex-avatar" style="background:#A583BC">FS</span>
+                <span><span class="ex-pname">Fernanda Solís</span><br /><span class="ex-prole">Vendedora · Studio Nails by Fer</span></span>
+              </div>
+              <p class="ex-desc">Lila y delicado, para historias y recomendaciones entre clientas.</p>
+              <div class="ex-colors"><span class="sw" style="background:#7A5C8F"></span><span class="sw" style="background:#A583BC"></span><span class="sw" style="background:#F0E8F5"></span> Lila · Lavanda · Perla</div>
+              <div class="ex-brand">
+                <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="4" width="17" height="17" rx="3" fill="#0B3527"/><rect x="27" y="4" width="17" height="17" rx="3" fill="#0B3527"/><rect x="4" y="27" width="17" height="17" rx="3" fill="#0B3527"/><rect x="27" y="27" width="7" height="7" fill="#E5A83B"/><rect x="37" y="37" width="7" height="7" fill="#0B3527"/></svg>
+                MenúListo
+              </div>
+              <a class="ex-wa" style="background:#7A5C8F" href="https://wa.me/528113009691?text=Hola%2C%20quiero%20una%20tarjeta%20como%20la%20de%20Studio%20Nails%20by%20Fer" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
+                WhatsApp
+              </a>
+            </div>
+          </article>
+
+          <article class="ex-card" data-cat="todos-extra">
+            <div class="ex-cta">
+              <span class="star" aria-hidden="true">✦</span>
+              <h3>¿Otro giro? Se adapta.</h3>
+              <p>Cada tarjeta usa los colores, el logo y el nombre de tu negocio.</p>
+              <p><b>Incluidas:</b> 1 en Estándar y 3 en Premium, sin mensualidad. Adicional $100 · Pago único $150 por tarjeta.</p>
+              <a class="cta-btn" href="https://wa.me/528113009691?text=Hola%2C%20soy%20contacto%20de%20Dani%20y%20quiero%20mi%20tarjeta%20de%20presentaci%C3%B3n%20digital" target="_blank" rel="noopener">Pedir mi tarjeta con Dani</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer>MenúListo · Dani — Vendedora de MenúListo</footer>
+    </main>
+
+    <script>
+      (function () {
+        var copyBtn = document.getElementById('copyBtn');
+        copyBtn.addEventListener('click', function () {
+          var num = '+52 81 1300 9691';
+          function done() {
+            copyBtn.textContent = '¡Copiado!';
+            setTimeout(function () { copyBtn.textContent = 'Copiar número'; }, 2000);
+          }
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(num).then(done, function () { fallback(); });
+          } else { fallback(); }
+          function fallback() {
+            var ta = document.createElement('textarea');
+            ta.value = num; ta.style.position = 'fixed'; ta.style.opacity = '0';
+            document.body.appendChild(ta); ta.select();
+            try { document.execCommand('copy'); done(); } catch (e) {}
+            document.body.removeChild(ta);
+          }
+        });
+
+        document.getElementById('saveBtn').addEventListener('click', function () {
+          var vcard = [
+            'BEGIN:VCARD',
+            'VERSION:3.0',
+            'FN:Dani',
+            'N:;Dani;;;',
+            'ORG:MenúListo',
+            'TITLE:Vendedora de MenúListo',
+            'TEL;TYPE=WORK,VOICE:+528113009691',
+            'URL:https://criskuddy.github.io/menu-listo-/menulisto/',
+            'NOTE:Contacto de MenúListo (WhatsApp y llamadas): 81 1300 9691. WhatsApp personal de Dani: por confirmar.',
+            'END:VCARD'
+          ].join('\r\n');
+          var blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+          var url = URL.createObjectURL(blob);
+          var a = document.createElement('a');
+          a.href = url; a.download = 'dani-menulisto.vcf';
+          document.body.appendChild(a); a.click();
+          document.body.removeChild(a);
+          setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
+        });
+
+        var filterBtns = document.querySelectorAll('.chip-btn');
+        var cards = document.querySelectorAll('#exGrid .ex-card');
+        filterBtns.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            filterBtns.forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            var f = btn.getAttribute('data-filter');
+            cards.forEach(function (c) {
+              var cat = c.getAttribute('data-cat');
+              var show = (f === 'todos') || (cat === f) || (cat === 'todos-extra');
+              c.style.display = show ? '' : 'none';
+            });
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
