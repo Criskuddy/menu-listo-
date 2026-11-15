@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Tarjeta de presentación digital de Ralph (MenúListo)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root{
+        --bg:#f1eee6;
+        --bg-soft:#e9e5d9;
+        --ink:#13211b;
+        --muted:#5b6b62;
+        --label:#0d7568;
+        --line:#d8d2c2;
+        --card:#0a3d2c;
+        --card-2:#0d4a36;
+        --card-border:rgba(255,255,255,.14);
+        --gold:#e9b949;
+        --gold-ink:#231a05;
+        --wa:#22d366;
+        --fb:#1877f2;
+        --chip-bg:#fbfaf6;
+        --chip-border:#ddd7c6;
+        --pending-bg:#fdf6e0;
+        --pending-border:#e9d48a;
+        --pending-ink:#6b5510;
+      }
+      @media (prefers-color-scheme: dark){
+        :root{
+          --bg:#101613;
+          --bg-soft:#171d1a;
+          --ink:#eef2ec;
+          --muted:#a7b5ab;
+          --label:#3ec9b6;
+          --line:#2b3530;
+          --chip-bg:#1a211d;
+          --chip-border:#2e3833;
+          --pending-bg:#2b2410;
+          --pending-border:#6b5a1e;
+          --pending-ink:#f0d47a;
+        }
+      }
+      *{box-sizing:border-box}
+      html,body{margin:0;padding:0}
+      body{
+        font-family:"Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+        background:var(--bg);
+        color:var(--ink);
+        -webkit-font-smoothing:antialiased;
+      }
+      a{color:inherit}
+      button, a.btn, .tile, .save-row{min-height:44px}
+      .wrap{max-width:1040px;margin:0 auto;padding:28px 20px 40px}
+      /* Eyebrow */
+      .eyebrow{
+        display:flex;align-items:center;gap:14px;
+        font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+        color:var(--label);margin:6px 2px 14px;
+      }
+      .eyebrow::after{content:"";flex:1;height:1px;background:var(--line)}
+      /* Card */
+      .card{
+        background:linear-gradient(135deg, var(--card) 0%, var(--card-2) 100%);
+        border-radius:28px;
+        padding:36px 38px 38px;
+        color:#fff;
+        box-shadow:0 18px 44px rgba(10,61,44,.22);
+      }
+      .card-grid{display:grid;grid-template-columns:1.15fr .95fr;gap:36px}
+      /* Left */
+      .brand{display:flex;align-items:center;gap:12px}
+      .logo{
+        width:52px;height:52px;border-radius:12px;background:#fff;
+        display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;
+        flex:0 0 auto;padding:4px 2px 3px;
+      }
+      .logo svg{display:block}
+      .logo span{font-size:8px;font-weight:800;color:#0a3d2c;letter-spacing:.01em;line-height:1}
+      .brand-name{font-size:19px;font-weight:800;line-height:1.1}
+      .brand-sub{font-size:12.5px;color:rgba(255,255,255,.72);margin-top:3px;font-weight:500}
+      .conqr{
+        margin-left:auto;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+        color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.28);
+        padding:7px 12px;border-radius:999px;white-space:nowrap;
+      }
+      .avatar{
+        width:76px;height:76px;border-radius:50%;background:#fff;color:#0a3d2c;
+        border:3px solid var(--gold);
+        display:flex;align-items:center;justify-content:center;
+        font-size:30px;font-weight:800;margin-top:30px;
+      }
+      h1.name{font-size:56px;line-height:.98;font-weight:800;letter-spacing:-.02em;margin:18px 0 0}
+      .role{
+        display:inline-flex;align-items:center;gap:8px;margin-top:16px;
+        background:var(--gold);color:var(--gold-ink);
+        font-size:13.5px;font-weight:800;padding:9px 16px;border-radius:999px;
+      }
+      .role::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold-ink)}
+      .desc{margin-top:20px;font-size:15.5px;line-height:1.6;color:rgba(255,255,255,.82);max-width:46ch;font-weight:500}
+      .personal-box{
+        margin-top:26px;border:1px solid var(--card-border);background:rgba(255,255,255,.06);
+        border-radius:16px;padding:16px 18px;
+        display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+      }
+      .personal-box .pb-label{font-size:10.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+      .personal-box .pb-status{font-size:19px;font-weight:800;margin-top:4px;display:flex;align-items:center;gap:9px}
+      .pending-dot{width:9px;height:9px;border-radius:50%;background:var(--gold);flex:0 0 auto}
+      .personal-box .pb-note{font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.5;width:100%}
+      /* Right tiles */
+      .tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start}
+      .tile{
+        border-radius:16px;padding:16px;text-decoration:none;
+        display:flex;flex-direction:column;gap:5px;min-height:118px;
+      }
+      .tile .t-ico{width:22px;height:22px}
+      .tile .t-ico svg{width:22px;height:22px;display:block}
+      .tile .t-title{font-size:16px;font-weight:800;margin-top:auto}
+      .tile .t-sub{font-size:12.5px;line-height:1.45;font-weight:500;opacity:.85}
+      .tile-wa{background:var(--wa);color:#062b14}
+      .tile-call{background:#fff;color:#13211b}
+      .tile-ig{background:#101418;color:#fff}
+      .tile-fb{background:var(--fb);color:#fff}
+      .tile:active{transform:scale(.99)}
+      .save-row{
+        grid-column:1 / -1;
+        display:flex;align-items:center;gap:10px;
+        border:1px solid rgba(255,255,255,.28);border-radius:14px;
+        padding:13px 16px;background:transparent;color:#fff;cursor:pointer;
+        font-family:inherit;text-align:left;width:100%;
+      }
+      .save-row .s-title{font-size:15px;font-weight:800}
+      .save-row .s-sub{margin-left:auto;font-size:12.5px;color:rgba(255,255,255,.7);font-weight:600;white-space:nowrap}
+      .save-row svg{flex:0 0 auto}
+      .menu-row{
+        grid-column:1 / -1;
+        display:flex;align-items:center;gap:16px;
+        border:1px solid var(--card-border);background:rgba(255,255,255,.06);
+        border-radius:16px;padding:14px 16px;text-decoration:none;color:#fff;
+      }
+      .qr-box{
+        width:84px;height:84px;border-radius:10px;background:#fff;flex:0 0 auto;
+        display:flex;align-items:center;justify-content:center;overflow:hidden;padding:5px;
+      }
+      .qr-box img,.qr-box canvas{width:74px !important;height:74px !important;display:block}
+      .qr-fallback{font-size:10px;font-weight:800;color:#0a3d2c;text-align:center;line-height:1.3;padding:4px}
+      .menu-row .m-title{font-size:15.5px;font-weight:800}
+      .menu-row .m-sub{font-size:12.5px;color:rgba(255,255,255,.7);margin-top:3px;line-height:1.45;font-weight:500}
+      .menu-row .m-arrow{margin-left:auto;font-size:20px;font-weight:800;color:var(--gold);flex:0 0 auto}
+      /* Chips */
+      .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+      .chip{
+        background:var(--chip-bg);border:1px solid var(--chip-border);border-radius:999px;
+        padding:9px 16px;font-size:13px;color:var(--muted);font-weight:500;
+        display:inline-flex;align-items:center;gap:7px;min-height:36px;
+      }
+      .chip strong{color:var(--ink);font-weight:800}
+      .chip svg{flex:0 0 auto}
+      /* Pending banner */
+      .pending-banner{
+        margin-top:22px;background:var(--pending-bg);border:1px solid var(--pending-border);
+        border-radius:16px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start;
+      }
+      .pending-banner .pb-ico{font-size:18px;line-height:1.2;color:var(--pending-ink);flex:0 0 auto;font-weight:800}
+      .pending-banner p{margin:0;font-size:14px;line-height:1.6;color:var(--pending-ink)}
+      .pending-banner strong{font-weight:800}
+      /* Menu CTA */
+      .menu-cta{margin-top:26px}
+      .menu-cta h2{font-size:21px;font-weight:800;margin:0 0 6px;letter-spacing:-.01em}
+      .menu-cta p{margin:0 0 14px;font-size:14.5px;line-height:1.6;color:var(--muted);max-width:62ch}
+      .menu-btn{
+        display:inline-flex;align-items:center;gap:10px;
+        background:var(--card);color:#fff;text-decoration:none;
+        font-size:15px;font-weight:800;padding:14px 22px;border-radius:14px;min-height:48px;
+      }
+      .menu-btn:active{transform:scale(.99)}
+      footer{margin-top:34px;text-align:center;font-size:12.5px;color:var(--muted);font-weight:600}
+      .toast{
+        position:fixed;left:50%;bottom:22px;transform:translate(-50%,80px);
+        background:#13211b;color:#fff;font-size:13.5px;font-weight:700;
+        padding:12px 18px;border-radius:999px;box-shadow:0 10px 28px rgba(0,0,0,.28);
+        transition:transform .25s ease;z-index:20;pointer-events:none;max-width:90vw;text-align:center;
+      }
+      .toast.show{transform:translate(-50%,0)}
+      @media (max-width:760px){
+        .wrap{padding:20px 14px 34px}
+        .card{padding:26px 20px 28px;border-radius:22px}
+        .card-grid{grid-template-columns:1fr;gap:26px}
+        h1.name{font-size:44px}
+        .avatar{width:64px;height:64px;font-size:25px;margin-top:24px}
+        .conqr{display:none}
+        .tile{min-height:108px;padding:14px}
+        .save-row .s-sub{display:none}
+        .desc{font-size:15px}
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <div class="eyebrow">Tarjeta de presentación digital · MenúListo</div>
+
+      <section class="card" aria-label="Tarjeta de presentación digital de Ralph">
+        <div class="card-grid">
+          <!-- Columna izquierda -->
+          <div>
+            <div class="brand">
+              <div class="logo" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <rect x="2.5" y="2.5" width="8" height="8" rx="1.5" fill="#0a3d2c"/>
+                  <rect x="13.5" y="2.5" width="8" height="8" rx="1.5" fill="#0a3d2c"/>
+                  <rect x="2.5" y="13.5" width="8" height="8" rx="1.5" fill="#0a3d2c"/>
+                  <rect x="5.2" y="5.2" width="2.6" height="2.6" fill="#fff"/>
+                  <rect x="16.2" y="5.2" width="2.6" height="2.6" fill="#fff"/>
+                  <rect x="5.2" y="16.2" width="2.6" height="2.6" fill="#fff"/>
+                  <rect x="13.5" y="13.5" width="3.4" height="3.4" fill="#0a3d2c"/>
+                  <rect x="18.6" y="13.5" width="2.9" height="2.9" fill="#0a3d2c"/>
+                  <rect x="13.5" y="18.6" width="2.9" height="2.9" fill="#0a3d2c"/>
+                  <rect x="18.6" y="18.6" width="2.9" height="2.9" fill="#e9b949"/>
+                </svg>
+                <span>MenúListo</span>
+              </div>
+              <div>
+                <div class="brand-name">MenúListo</div>
+                <div class="brand-sub">Menús digitales con QR</div>
+              </div>
+              <div class="conqr">Con QR</div>
+            </div>
+
+            <div class="avatar" aria-hidden="true">R</div>
+            <h1 class="name">Ralph</h1>
+            <div class="role">Vendedor de MenúListo</div>
+
+            <p class="desc">Soy vendedor de MenúListo. Ayudo a negocios de cualquier ciudad a tener su menú o catálogo digital con QR, 100% en línea: fácil de compartir, fácil de actualizar y listo para recibir pedidos y mensajes.</p>
+
+            <div class="personal-box">
+              <div>
+                <div class="pb-label">WhatsApp personal de Ralph</div>
+                <div class="pb-status"><span class="pending-dot" aria-hidden="true"></span>Por confirmar</div>
+              </div>
+              <div class="pb-note">Su número directo aún no está confirmado. Por ahora, todo contacto es por el WhatsApp de MenúListo: <strong style="color:#fff">81 1300 9691</strong>.</div>
+            </div>
+          </div>
+
+          <!-- Columna derecha -->
+          <div class="tiles">
+            <a class="tile tile-wa" href="https://wa.me/528113009691?text=Hola%2C%20me%20pasaron%20la%20tarjeta%20de%20Ralph%2C%20vendedor%20de%20Men%C3%BAListo.%20Quiero%20informes%20de%20los%20men%C3%BAs%20digitales%20con%20QR." target="_blank" rel="noopener">
+              <span class="t-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.6-1.6a.5.5 0 0 0 0-.5c-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3Z"/></svg></span>
+              <span class="t-title">WhatsApp</span>
+              <span class="t-sub">Respuesta directa con MenúListo<br />81 1300 9691</span>
+            </a>
+
+            <a class="tile tile-call" href="tel:+528113009691">
+              <span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.6 2Z"/></svg></span>
+              <span class="t-title">Llamar</span>
+              <span class="t-sub">MenúListo<br />81 1300 9691</span>
+            </a>
+
+            <div class="tile tile-ig" aria-label="Instagram de MenúListo, próximamente">
+              <span class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r=".6" fill="currentColor" stroke="none"/></svg></span>
+              <span class="t-title">Instagram</span>
+              <span class="t-sub">@menulisto · Próximamente</span>
+            </div>
+
+            <div class="tile tile-fb" aria-label="Facebook de MenúListo, próximamente">
+              <span class="t-ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.3 0-1.1-.1-2.1-.1-2.1 0-3.6 1.3-3.6 3.7V11H8.3v3h2.4v7h2.8Z"/></svg></span>
+              <span class="t-title">Facebook</span>
+              <span class="t-sub">@menulisto · Próximamente</span>
+            </div>
+
+            <button class="save-row" id="saveContact" type="button">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8"/><path d="M7 3v5h8"/></svg>
+              <span class="s-title">Guardar contacto</span>
+              <span class="s-sub">Descargar vCard →</span>
+            </button>
+
+            <a class="menu-row" href="https://criskuddy.github.io/menu-listo-/menulisto/" target="_blank" rel="noopener">
+              <span class="qr-box"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAzQAAAM0AQAAAABFCVraAAAEbElEQVR4nO3dS47jNhAA0GKQvX2Duf+xcgPpBMzClPl1OkB/ALNfLWYsmdIDuDG7VCqmHD8R518/wkRwOBwOh8PhcDgcDofD4XA4HA6Hw+FwOBwOh8P5eSfyM6avbjnnfETkfLSDX95lfYOcc87HbvPG4XA4HM6vcervef21v+Wc0p+yUkgppRRxy7muHsrhyxssnG8MDofD4XA4n4+/h+P0+O92NIc5znI6x3mfB59pvKIeXrHbvHE4HA6Hs7Mzrg+muB2R4pYjNZ/qciGeC4IPYrd543A4HA5nZ+fD9UEM+YN0JRHO1A35IHabNw6Hw+FwdnbG9cH0Q/94eFBOp8c/VzohHiuFR2LheHGDR+w2bxwOh8Ph/BrnTE2Uc1fxYUr39rCc+9OXIa5usHC+MTgcDofD4Xw+mvzB+i//Mz2+yP1hueJMEX05wovYbd44HA6Hw/klTkr38gZjiXvb+qBNCZwpldcd//TphO7aV863BofD4XA4nC+Itl9B1xCp9jDIfZRzx/MGw+Ajom2RoD8Sh8PhcDjv5ozrg3W3o+N5eLSXteOuIfUG7ZrC+oDD4XA4nDdyXry/8Hg54VlieMvzqwtR2iXlsf7gXHVE2G3eOBwOh8PZ2en/ym+fG7SJgGP9kKFNGAzZhaN8K3/A4XA4HM77OU3+4OqM/Kw47PIH3ZCjGZKf7zRczZjvC2e3eeNwOBwOZ2dnzB8MiYChCCGPcV1RB6s/4HA4HA7n7Z0uf3BtrlAaHgyJgJpEeLF7U4luu6Yrdps3DofD4XB2dpbvL9QKg1WtwfQKZHeuvYH6Aw6Hw+Fw3tLp1gc1ut/46Z3Ho7/Bof8Bh8PhcDhbOWN/5fqoIMXteD5peJ5ebe18yxHPhxHp+TJkt+DYbd44HA6Hw9nZGfMHUyIgIqYOSEOszoX6RA6Hw+FwtnHqNgvD/gsRsehrkHPO+Z+yHcPU/+A/nO8KDofD4XA4XxCr+sR1wqCWIXbFCqvSRPWJHA6Hw+G8szOvD2JaAUxvKFzn2m/zNMTzBQ6Hw+Fw3tRZ7r9QSxPjcRht4eLQK3GqVHx8Opo+CbHfvHE4HA6Hs7OzzB+UGLIGq8PVZbHYsUH+gMPhcDicN3LmlsldDONW7RCmtkrLBw+7zRuHw+FwODs78/5MNepDhvM+91KuW0Bf51LfVVn/Aw6Hw+Fw3tTp6g+6n/dSdXA7oq0riJh7JnVf1P0X1B9wOBwOh/OmzlifOO3gHNF1Q+x2eq7FjKlfLsyrh93mjcPhcDicX+2cKUXcck7pXronpZRKQ6SU7mXUsF1T/eJ/O18UHA6Hw+FwPh9j/mCK23HlFOq+zec9rl0XUvN+Yy1RmPst7zZvHA6Hw+Hs7Cz7H7SHVwVi2+ug24GpNEvoOiEMlYqx37xxOBwOh7Oz060P5pLD1LY8Kp/aDMGVRKibOJaVwphE2G3eOBwOh8PZ2UnLrRe/PM7d5o3D4XA4HA6Hw+FwOBwOh8PhcDgcDofD4XA4HE6NfwF8gaXdkeOKugAAAABJRU5ErkJggg==" alt="Código QR de la tarjeta de presentación de Ralph" width="74" height="74" /></span>
+              <span>
+                <span class="m-title">Ver el menú de MenúListo</span>
+                <span class="m-sub" style="display:block">Escanea el QR o toca aquí para ver paquetes, ejemplos y precios.</span>
+              </span>
+              <span class="m-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="chips" aria-label="Datos del servicio">
+        <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3Z"/></svg><strong>Servicio en línea</strong> · Para cualquier ciudad</span>
+        <span class="chip">Prueba gratis <strong>15 días</strong></span>
+        <span class="chip">Menús · Catálogos · <strong>Tarjetas de presentación digitales</strong></span>
+      </div>
+
+      <div class="pending-banner" role="note">
+        <span class="pb-ico" aria-hidden="true">●</span>
+        <p><strong>WhatsApp personal de Ralph: por confirmar.</strong> Todavía no tiene un número directo publicado en esta tarjeta. En cuanto él lo dé, se actualiza aquí y en su vCard. Mientras tanto, escríbele por el WhatsApp de MenúListo, <strong>81 1300 9691</strong>, y pide que te atienda de parte de Ralph.</p>
+      </div>
+
+      <section class="menu-cta">
+        <h2>¿Quieres tu menú digital con QR?</h2>
+        <p>Ralph te puede mostrar cómo funciona MenúListo: menú o catálogo 100% en línea, con tus colores y tu logo, listo para compartir por WhatsApp y redes. Empieza con la prueba gratis de 15 días.</p>
+        <a class="menu-btn" href="https://criskuddy.github.io/menu-listo-/menulisto/" target="_blank" rel="noopener">Ver el menú de MenúListo <span aria-hidden="true">→</span></a>
+      </section>
+
+      <footer>MenúListo · Ralph — Vendedor de MenúListo · Tarjeta de presentación digital</footer>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script>
+      (function () {
+        var toast = document.getElementById('toast');
+        var toastTimer = null;
+        function showToast(msg) {
+          toast.textContent = msg;
+          toast.classList.add('show');
+          clearTimeout(toastTimer);
+          toastTimer = setTimeout(function () { toast.classList.remove('show'); }, 2600);
+        }
+
+        var menuUrl = 'https://criskuddy.github.io/menu-listo-/menulisto/';
+
+        // Guardar contacto (vCard): Ralph, sin número personal (por confirmar).
+        // Se incluye el WhatsApp de MenúListo como teléfono de la empresa.
+        document.getElementById('saveContact').addEventListener('click', function () {
+          var vcard = [
+            'BEGIN:VCARD',
+            'VERSION:3.0',
+            'FN:Ralph',
+            'N:;Ralph;;;',
+            'TITLE:Vendedor de MenúListo',
+            'ORG:MenúListo',
+            'TEL;TYPE=CELL,WORK:+528113009691',
+            'URL:' + menuUrl,
+            'NOTE:Vendedor de MenúListo. WhatsApp de MenúListo: 81 1300 9691. WhatsApp personal de Ralph: por confirmar.',
+            'END:VCARD'
+          ].join('\r\n');
+          var blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+          var url = URL.createObjectURL(blob);
+          var a = document.createElement('a');
+          a.href = url;
+          a.download = 'Ralph-Menulisto.vcf';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
+          showToast('Contacto de Ralph descargado');
+        });
+      })();
+    </script>
+  </body>
+</html>
